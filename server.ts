@@ -3,7 +3,6 @@ import path from "path";
 import dotenv from "dotenv";
 import compression from "compression";
 import { GoogleGenAI, Type } from "@google/genai";
-import { createServer as createViteServer } from "vite";
 
 // Load environment variables
 dotenv.config();
@@ -247,6 +246,7 @@ Devuelve el resultado en formato JSON estrictamente de acuerdo con el schema pro
 // Configure Vite middleware in development, or serve built assets in production
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
