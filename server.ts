@@ -15,8 +15,17 @@ app.use(compression());
 
 app.use(express.json());
 
-// Serve static assets from public folder in all environments to prevent 404s
-app.use(express.static(path.join(process.cwd(), "public")));
+// Serve static assets from public folder with optimal caching policies
+app.use(express.static(path.join(process.cwd(), "public"), {
+  maxAge: "30d",
+  setHeaders: (res, filePath) => {
+    if (filePath.match(/\.(webp|png|jpg|jpeg|gif|svg|ico)$/i)) {
+      res.setHeader("Cache-Control", "public, max-age=2592000, must-revalidate");
+    } else {
+      res.setHeader("Cache-Control", "public, max-age=604800, must-revalidate");
+    }
+  }
+}));
 
 // Lazy-loaded Gemini AI client
 let aiClient: GoogleGenAI | null = null;

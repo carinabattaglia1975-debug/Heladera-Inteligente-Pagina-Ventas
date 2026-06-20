@@ -186,7 +186,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
         <div className="w-28 sm:w-36 shrink-0 overflow-hidden rounded-xl border border-stone-200 shadow-md bg-white">
           <img 
-            src="/input_file_1.png?v=2" 
+            src="/input_file_1.webp" 
             alt="Recetario Desinflamatorio" 
             width={144}
             height={200}
