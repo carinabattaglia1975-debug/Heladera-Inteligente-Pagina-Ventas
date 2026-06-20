@@ -109,61 +109,7 @@ export const SalesCopy: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenCheckout
           />
         </div>
 
-        {/* 3 BENEFICIOS CON ACCIÓN CONCRETA (Hacés X -> Pasa Y) */}
-        <div className="grid md:grid-cols-3 gap-5 pt-3">
-          
-          <div className="bg-white p-6 rounded-2xl border-l-4 border-l-orange-500 border-y border-r border-stone-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono tracking-wider font-extrabold text-orange-600 bg-orange-50 px-2 py-0.5 rounded-md uppercase">
-                  Paso 1
-                </span>
-                <span className="text-xl">💸</span>
-              </div>
-              <h3 className="text-stone-900 font-serif font-black text-sm tracking-tight">
-                Registrás lo que tenés en segundos...
-              </h3>
-              <p className="text-stone-600 text-xs leading-relaxed bg-stone-50 p-2.5 rounded-lg border border-stone-100">
-                <strong className="text-orange-600">→</strong> La app te genera ideas de cenas nutritivas y sanas al instante con esos ingredientes, sin desperdicios.
-              </p>
-            </div>
-          </div>
 
-          <div className="bg-white p-6 rounded-2xl border-l-4 border-l-emerald-500 border-y border-r border-stone-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono tracking-wider font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md uppercase">
-                  Paso 2
-                </span>
-                <span className="text-xl">🥗</span>
-              </div>
-              <h3 className="text-stone-900 font-serif font-black text-sm tracking-tight">
-                Configurás tu perfil de comida...
-              </h3>
-              <p className="text-stone-600 text-xs leading-relaxed bg-stone-50 p-2.5 rounded-lg border border-stone-100">
-                <strong className="text-emerald-600">→</strong> Recibís recetas personalizadas que se adaptan a tu cuerpo (keto, vegano, celíaco, etc.) al 100%.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white p-6 rounded-2xl border-l-4 border-l-blue-500 border-y border-r border-stone-200/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono tracking-wider font-extrabold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md uppercase">
-                  Paso 3
-                </span>
-                <span className="text-xl">⏰</span>
-              </div>
-              <h3 className="text-stone-900 font-serif font-black text-sm tracking-tight">
-                Fijás alertas de vencimiento rápidas...
-              </h3>
-              <p className="text-stone-600 text-xs leading-relaxed bg-stone-50 p-2.5 rounded-lg border border-stone-100">
-                <strong className="text-blue-600">→</strong> Consumís tus insumos a tiempo antes de que se echen a perder y dejás de regalarle plata al tacho.
-              </p>
-            </div>
-          </div>
-
-        </div>
 
         {/* QU&Eacute; INCLUYE (M&Aacute;XIMO 6 &Iacute;TEMS) */}
         <div className="bg-gradient-to-br from-stone-900 to-stone-950 p-6 md:p-8 rounded-3xl border border-stone-800 max-w-xl mx-auto space-y-5 text-white shadow-lg">
