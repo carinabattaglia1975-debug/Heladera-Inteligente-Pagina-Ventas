@@ -57,14 +57,14 @@ const TESTIMONIALS = [
 ];
 
 const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenCheckout }) => {
-  // Bonus seats countdown starting at 12 and randomly going down to 3, stays there
+  // Bonus seats countdown starting around 18 and randomly going down to 7, stays there
   const [bonusSeats, setBonusSeats] = useState(() => {
     const stored = localStorage.getItem("bonus_seats_left_count");
     if (stored) {
       const parsed = parseInt(stored, 10);
-      return parsed >= 3 && parsed <= 12 ? parsed : 8;
+      return parsed >= 7 && parsed <= 35 ? parsed : 18;
     }
-    return 8;
+    return 18;
   });
 
   // Recent Purchase Toast Notification State
@@ -79,7 +79,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
   useEffect(() => {
     const interval = setInterval(() => {
       setBonusSeats((prev) => {
-        if (prev <= 3) return 3;
+        if (prev <= 7) return 7;
         const decrement = Math.random() > 0.82 ? 1 : 0;
         return prev - decrement;
       });
@@ -171,7 +171,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         </li>
         <li className="flex items-start gap-3 bg-emerald-950/45 p-3 rounded-xl border border-emerald-900/60 hover:border-emerald-800 transition-colors">
           <span className="text-emerald-400 shrink-0 text-base">🎁</span>
-          <span><strong className="text-emerald-300 block font-serif tracking-tight mb-0.5">BONO: Recetario Desinflamatorio</strong> solo para los primeros 50 compradores.</span>
+          <span><strong className="text-emerald-300 block font-serif tracking-tight mb-0.5">BONO: Recetario Desinflamatorio</strong> solo para los primeros 200 compradores.</span>
         </li>
       </ul>
     </div>
@@ -211,14 +211,14 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         <div className="flex justify-between items-center text-xs">
           <span className="font-bold text-stone-900 uppercase tracking-wider text-[10px]">Cupos de bonificación para hoy:</span>
           <span className="text-emerald-700 font-extrabold text-xs animate-pulse bg-emerald-100 px-2 py-0.5 rounded-md">
-            ¡Solo quedan {bonusSeats} de 50 lugares!
+            ¡Solo quedan {bonusSeats} de 200 lugares!
           </span>
         </div>
         
         <div className="w-full bg-stone-200 h-2 rounded-full overflow-hidden">
           <div 
             className="bg-emerald-600 h-full rounded-full transition-all duration-1000 ease-in-out"
-            style={{ width: `${(bonusSeats / 50) * 100}%` }}
+            style={{ width: `${(bonusSeats / 200) * 100}%` }}
           />
         </div>
       </div>
