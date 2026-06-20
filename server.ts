@@ -15,6 +15,9 @@ app.use(compression());
 
 app.use(express.json());
 
+// Serve static assets from public folder in all environments to prevent 404s
+app.use(express.static(path.join(process.cwd(), "public")));
+
 // Lazy-loaded Gemini AI client
 let aiClient: GoogleGenAI | null = null;
 

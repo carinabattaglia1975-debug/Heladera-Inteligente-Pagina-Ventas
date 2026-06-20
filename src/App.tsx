@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { 
-  Sparkles, 
-  ArrowRight, 
-  ShieldCheck, 
-  Clock, 
-  ShoppingBag, 
-  Lock,
-  CreditCard
+  ShoppingBag
 } from "lucide-react";
 
 // Lazy-load heavier components to optimize initial mobile paint speeds and TBT
 const SalesCopy = React.lazy(() => import("./components/SalesCopy").then((m) => ({ default: m.SalesCopy })));
 const CheckoutModal = React.lazy(() => import("./components/CheckoutModal"));
-const FridgeApp = React.lazy(() => import("./components/FridgeApp").then((m) => ({ default: m.FridgeApp })));
 
 export default function App() {
   const [showCheckout, setShowCheckout] = useState(false);
@@ -114,7 +107,7 @@ export default function App() {
         </div>
 
         <nav className="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-stone-600">
-          <a href="#simulador" className="hover:text-stone-900 transition-colors">Probar Simulador</a>
+          <a href="#sales-page" className="hover:text-stone-900 transition-colors">Beneficios</a>
           <a href="#oferta-cierre" className="hover:text-stone-900 transition-colors">Ver Oferta</a>
         </nav>
 
@@ -127,61 +120,7 @@ export default function App() {
         </button>
       </header>
 
-      {/* 3) TOP HERO SECTION WITH BIG VIDEO PLAYLIST */}
-      <section 
-        className="relative pt-8 pb-14 px-4 md:px-8 border-b border-stone-200/60 overflow-hidden bg-gradient-to-b from-stone-50/50 to-white" 
-        id="hero"
-      >
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
-          
-          <div className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-850 text-xs font-bold px-3 py-1 rounded-full border border-emerald-200/40">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-700 fill-emerald-700 animate-pulse" />
-            <span>LANZAMIENTO OFICIAL PREMIUM</span>
-          </div>
-
-          {/* HEADLINE */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-serif font-semibold text-stone-950 tracking-tight leading-tight max-w-3xl mx-auto">
-            Basta de perder <span className="text-emerald-700">tiempo pensando qué cocinar</span> cada noche
-          </h1>
-
-          {/* SUBHEADLINE */}
-          <p className="text-stone-600 text-sm sm:text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            Mira cómo funciona en 2 minutos
-          </p>
-
-          {/* PROMINENT INTERACTIVE SIMULATOR CELLPHONE/WIDGET */}
-          <div id="simulador" className="pt-2 max-w-4xl mx-auto text-left">
-            <React.Suspense fallback={
-              <div className="w-full bg-stone-100 border border-stone-200/60 rounded-3xl p-8 text-center flex flex-col items-center justify-center min-h-[350px]">
-                <div className="w-8 h-8 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin mb-4" />
-                <p className="text-stone-700 font-serif text-xs">Iniciando simulador de Heladera Inteligente™...</p>
-              </div>
-            }>
-              <FridgeApp />
-            </React.Suspense>
-          </div>
-
-          {/* PRIMARY HERO CTA BUTTON */}
-          <div className="pt-4 flex flex-col items-center gap-3">
-            <button
-              onClick={scrollToOffer}
-              className="cursor-pointer bg-emerald-600 hover:bg-emerald-700 text-white border-none px-8 py-4.5 rounded-2xl font-serif font-semibold text-lg md:text-xl tracking-wide shadow-xl shadow-emerald-950/25 transition-all transform hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2"
-            >
-              <span>QUIERO MI ACCESO AHORA</span>
-              <ArrowRight className="w-5 h-5 text-white animate-pulse" />
-            </button>
-
-            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs text-stone-550">
-              <span className="flex items-center gap-1">⏱ Acceso de por vida inmediato</span>
-              <span>•</span>
-              <span className="flex items-center gap-1"><ShieldCheck className="w-4 h-4 text-emerald-600" /> Garantía de 7 días</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 4) MIDDLE SALES COPY (COVERS ¿CÓMO FUNCIONA? AND PRICE SELECTORS) */}
+      {/* 3) MAIN SALES PAGE CONTAINER */}
       <React.Suspense fallback={
         <div className="py-20 text-center flex flex-col items-center justify-center bg-stone-50">
           <div className="w-8 h-8 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin mb-4" />
