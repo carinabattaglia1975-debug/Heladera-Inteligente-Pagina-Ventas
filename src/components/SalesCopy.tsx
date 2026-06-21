@@ -228,7 +228,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
             height={158}
             className="w-full h-auto object-cover block aspect-[3/4]"
             referrerPolicy="no-referrer"
-            loading="lazy"
+            loading="eager"
           />
         </div>
 
