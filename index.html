@@ -15,10 +15,10 @@
     <link rel="preload" as="image" href="/chatgpt_hero.webp" type="image/webp" fetchpriority="high" />
 
     <!-- Google Fonts loaded asynchronously with high-priority link preloads and display=swap -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400&display=swap" media="print" onload="this.media='all'" />
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400&display=swap" />
     </noscript>
   </head>
   <body>
@@ -27,7 +27,59 @@
       <img height="1" width="1" style="display:none" 
            src="https://www.facebook.com/tr?id=2065971250795796&ev=PageView&noscript=1"/>
     </noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div class="min-h-screen bg-[#fcfbfa] text-stone-800 font-sans">
+        <!-- 1) TOP TICKER BAR static shell -->
+        <div class="w-full bg-[#1b3d2b] text-emerald-100 py-2.5 text-[11px] font-sans font-medium tracking-wide text-center border-b border-emerald-900/10">
+          <span class="uppercase">🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA</span>
+        </div>
+
+        <!-- 2) HEADER static shell -->
+        <header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-stone-200/60 px-6 py-3 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center font-serif font-black text-white text-base shadow-sm shrink-0">
+              ❄️
+            </div>
+            <div class="flex flex-col text-left font-serif">
+              <span class="font-serif font-bold text-stone-900 tracking-tight text-base leading-none">
+                Heladera Inteligente™
+              </span>
+              <span class="text-[10px] text-stone-800 font-semibold font-sans tracking-wide">Planificá tus Comidas</span>
+            </div>
+          </div>
+          <button class="bg-[#2c5e43] text-stone-50 border-none text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-xl shadow-sm">
+            Acceder
+          </button>
+        </header>
+
+        <!-- 3) HERO SECTION static shell (minimizes LCP & FCP delay to milliseconds) -->
+        <div class="max-w-3xl mx-auto px-4 py-8 space-y-8 text-center" id="sales-page">
+          <div class="text-center space-y-4">
+            <span class="text-xs font-bold tracking-widest text-[#1b3d2b] uppercase bg-emerald-100 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5 shadow-xs">
+              <span>Resultado del Test</span>
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-950 tracking-tight leading-tight max-w-2xl mx-auto">
+              El test no miente: Estás tirando una fortuna por mes en comida tirada a la basura. Frená el desperdicio HOY.
+            </h2>
+            <p class="text-stone-700 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+              Ya viste a dónde se va tu plata. Es momento de automatizar tus cenas, usar lo que ya tenés en casa y cocinar rico en segundos, sin descargar nada.
+            </p>
+          </div>
+
+          <div class="max-w-xl mx-auto overflow-hidden rounded-2xl border border-stone-200/80 shadow-md bg-stone-100/50">
+            <img 
+              src="/chatgpt_hero.webp" 
+              alt="Heladera Inteligente App Preview" 
+              width="576"
+              height="432"
+              class="w-full h-auto object-cover block"
+              referrerpolicy="no-referrer"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" defer crossorigin src="/src/main.tsx"></script>
 
     <!-- Meta Pixel Code optimized to defer third-party script execution, eliminating CPU blocking and boosting speed scores -->
