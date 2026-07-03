@@ -181,6 +181,11 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
     onOpenCheckout(17900, "Heladera Inteligente™ + Bono Recetario");
   }, [onOpenCheckout]);
 
+  const handleScrollToOffer = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    document.getElementById("oferta-cierre")?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   const currentPurchase = SIMULATED_PURCHASES[currentPurchaseIndex];
 
   // MEMOIZED STRUCTURAL SECTIONS TO ENSURE ULTRA-FAST CARGA AND PREVENT RE-RENDERS
@@ -507,7 +512,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
   const upperCtaButton = useMemo(() => (
     <div className="max-w-md mx-auto text-center pt-2 pb-1 px-2">
       <button
-        onClick={handlePurchase}
+        onClick={handleScrollToOffer}
         className="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-700 text-stone-50 border-none px-6 py-4 rounded-xl font-serif font-black text-md md:text-lg tracking-wide shadow-md active:scale-[0.99] transition-all flex items-center justify-center gap-2"
       >
         <ShoppingBag className="w-5 h-5 text-white shrink-0" />
@@ -517,7 +522,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         Único pago de $17.900 ARS • Acceso de por vida
       </p>
     </div>
-  ), [handlePurchase]);
+  ), [handleScrollToOffer]);
 
   const recipesSearchBenefit = useMemo(() => (
     <div className="max-w-xl mx-auto bg-stone-100 border border-stone-200/80 p-6 sm:p-7 rounded-3xl shadow-md text-left space-y-4">
