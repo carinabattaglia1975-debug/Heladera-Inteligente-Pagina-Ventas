@@ -404,7 +404,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent w-1/3 h-full animate-shimmer pointer-events-none" />
         </div>
 
-        <div className="flex justify-between items-center text-[10px] text-stone-500 font-mono pt-0.5">
+        <div className="flex justify-between items-center text-[10px] text-stone-700 font-mono pt-0.5">
           <span className="font-bold text-emerald-700">{Math.round(((200 - bonusSeats) / 200) * 100)}% Reservado</span>
           <span className="animate-pulse text-emerald-600 font-bold flex items-center gap-1">
             ● {activeViewers} personas mirando esta oferta ahora
@@ -516,9 +516,9 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         className="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-700 text-stone-50 border-none px-6 py-4 rounded-xl font-serif font-black text-md md:text-lg tracking-wide shadow-md active:scale-[0.99] transition-all flex items-center justify-center gap-2"
       >
         <ShoppingBag className="w-5 h-5 text-white shrink-0" />
-        <span>QUIERO MI ACCESO + EL BONO</span>
+        <span>QUIERO MI ACCESO + LOS BONOS</span>
       </button>
-      <p className="text-[10px] text-stone-500 font-mono mt-1.5 leading-normal">
+      <p className="text-[10px] text-stone-700 font-mono mt-1.5 leading-normal">
         Único pago de $17.900 ARS • Acceso de por vida
       </p>
     </div>
@@ -539,19 +539,19 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
       <div className="grid grid-cols-3 gap-3 pt-1">
         <div className="bg-white p-3 rounded-2xl border border-stone-200 text-center space-y-1 shadow-2xs">
           <p className="text-xs font-bold font-serif text-[#f27a1a]">Cookpad</p>
-          <p className="text-[10px] text-stone-500">Comunidad y tips</p>
+          <p className="text-[10px] text-stone-700 font-medium">Comunidad y tips</p>
         </div>
         <div className="bg-white p-3 rounded-2xl border border-stone-200 text-center space-y-1 shadow-2xs">
           <p className="text-xs font-bold font-serif text-[#d92a1c]">Cocineros Arg</p>
-          <p className="text-[10px] text-stone-500">Clásicos locales</p>
+          <p className="text-[10px] text-stone-700 font-medium">Clásicos locales</p>
         </div>
         <div className="bg-white p-3 rounded-2xl border border-stone-200 text-center space-y-1 shadow-2xs">
           <p className="text-xs font-bold font-serif text-[#f12c66]">Paulina Cocina</p>
-          <p className="text-[10px] text-stone-500">Fácil y rápido</p>
+          <p className="text-[10px] text-stone-700 font-medium">Fácil y rápido</p>
         </div>
       </div>
       
-      <p className="text-[10px] text-stone-500 italic text-center leading-normal">
+      <p className="text-[10px] text-stone-700 italic text-center leading-normal font-medium">
         *Integración optimizada para encontrar ideas rápidas adaptadas a los ingredientes reales de tu heladera.
       </p>
     </div>
@@ -659,7 +659,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
             className="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-700 text-stone-50 border-none px-6 py-4 rounded-xl font-serif font-black text-md md:text-lg tracking-wide shadow-xl active:scale-[0.99] transition-all flex items-center justify-center gap-2"
           >
             <ShoppingBag className="w-5 h-5 text-white" />
-            <span>QUIERO MI ACCESO + EL BONO</span>
+            <span>QUIERO MI ACCESO + LOS BONOS</span>
           </button>
 
           {/* Sellos de Seguridad */}
