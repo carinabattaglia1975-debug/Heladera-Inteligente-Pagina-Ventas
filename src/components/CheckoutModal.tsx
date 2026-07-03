@@ -192,12 +192,12 @@ function CheckoutModal({
                     
                     <div className="py-2.5 flex justify-between items-center text-stone-850">
                       <div className="space-y-0.5">
-                        <p className="font-semibold text-stone-900 font-serif">1) Guía Premium de Heladera Inteligente (PDF)</p>
-                        <p className="text-[10px] text-stone-700">Guía de planificación completa + Planillas de Alacena</p>
+                        <p className="font-semibold text-stone-900 font-serif">1) Manual de Instrucciones Paso a Paso (PDF)</p>
+                        <p className="text-[10px] text-stone-700">Con imágenes de la app real para optimizar comidas y ahorrar dinero</p>
                       </div>
                       <a 
                         href="#" 
-                        onClick={(e) => { e.preventDefault(); alert("Simulando descarga de la Guía de Heladera Inteligente..."); }}
+                        onClick={(e) => { e.preventDefault(); alert("Simulando descarga del Manual de Instrucciones de la Heladera Inteligente..."); }}
                         className="p-1 px-2.5 bg-[#2c5e43] hover:bg-[#1c3a2a] text-stone-50 rounded flex items-center gap-1.5 transition-all text-[11px] font-sans no-underline font-medium"
                       >
                         <Download className="w-3.5 h-3.5" />

@@ -8,7 +8,15 @@ import {
   MessageSquare,
   Sparkles,
   Gift,
-  Bell
+  Bell,
+  FileText,
+  Smartphone,
+  Laptop,
+  AlertTriangle,
+  Share2,
+  HeartPulse,
+  Clock,
+  CheckSquare
 } from "lucide-react";
 
 interface SalesCopyProps {
@@ -138,77 +146,114 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
   ), []);
 
   const includedSection = useMemo(() => (
-    <div className="max-w-xl mx-auto bg-stone-900 text-stone-100 p-6 sm:p-7 rounded-3xl shadow-xl border border-stone-850 text-left space-y-5">
+    <div className="max-w-xl mx-auto bg-stone-900 text-stone-100 p-6 sm:p-7 rounded-3xl shadow-xl border border-stone-850 text-left space-y-6">
       <div className="flex items-center justify-between gap-3 border-b border-stone-850 pb-3.5">
         <div className="flex items-center gap-2">
-          <span className="text-sky-400 text-sm">🔵</span>
+          <span className="text-emerald-400 text-sm">🍳</span>
           <h3 className="font-serif font-black text-white text-base sm:text-md tracking-tight">
-            ¿Qué te llevás hoy con tu acceso de por vida?
+            Asistente de Cocina Inteligente Premium
           </h3>
         </div>
         <span className="text-[9px] font-bold tracking-wider text-[#d1fae5] uppercase bg-[#1e442f] px-2 py-0.5 rounded-sm border border-emerald-800">
-          ACCESO VITALICIO
+          PROMO VITALICIA
         </span>
       </div>
 
+      <p className="text-xs text-stone-300 leading-relaxed">
+        Nuestra plataforma actúa como tu copiloto culinario y administrador del hogar, diseñado para ayudarte a <strong className="text-emerald-400 font-bold">optimizar tus comidas, ahorrar tiempo y dinero</strong>, y llevar una alimentación mucho más saludable sin desperdiciar ingredientes.
+      </p>
+
       <div className="space-y-4">
-        {/* Item 1 */}
+        {/* Desperdicio Cero */}
         <div className="flex items-start gap-2.5">
-          <Check className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
-          <p className="text-xs sm:text-xs leading-relaxed">
-            <strong className="text-white font-bold font-serif">1. Módulo Inteligente de Recetas:</strong>{" "}
-            <span className="text-stone-300">armás ideas con lo que ya tenés, sin descargar nada.</span>
-          </p>
+          <div className="w-5 h-5 rounded bg-emerald-950/60 flex items-center justify-center border border-emerald-800 shrink-0 mt-0.5">
+            <Check className="w-3 h-3 text-emerald-400" />
+          </div>
+          <div>
+            <p className="text-xs font-bold text-white font-serif">Desperdicio Cero de Alimentos</p>
+            <p className="text-[11px] text-stone-300 leading-relaxed">
+              La app prioriza el uso de ingredientes que están cerca de su fecha de vencimiento, ayudándote a consumir todo antes de que se eche a perder. Marcá ingredientes como "Urgente" ⚠️ para que la IA los priorice de inmediato.
+            </p>
+          </div>
         </div>
 
-        {/* Item 2 */}
+        {/* Ahorro Económico */}
         <div className="flex items-start gap-2.5">
-          <Check className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
-          <p className="text-xs sm:text-xs leading-relaxed">
-            <strong className="text-white font-bold font-serif">2. Listas de Compras por WhatsApp:</strong>{" "}
-            <span className="text-stone-300">generarás listados exactos y los compartís en un toque.</span>
-          </p>
+          <div className="w-5 h-5 rounded bg-emerald-950/60 flex items-center justify-center border border-emerald-800 shrink-0 mt-0.5">
+            <Check className="w-3 h-3 text-emerald-400" />
+          </div>
+          <div>
+            <p className="text-xs font-bold text-white font-serif">Ahorro Económico Inteligente</p>
+            <p className="text-[11px] text-stone-300 leading-relaxed">
+              Al sugerir recetas basadas en lo que ya tenés en casa, reducís las compras innecesarias de último momento y optimizás tu presupuesto mensual de supermercado.
+            </p>
+          </div>
         </div>
 
-        {/* Item 3 */}
+        {/* Nutrición y Salud */}
         <div className="flex items-start gap-2.5">
-          <Check className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
-          <p className="text-xs sm:text-xs leading-relaxed">
-            <strong className="text-white font-bold font-serif">3. Filtros por Perfil Alimentario:</strong>{" "}
-            <span className="text-stone-300">recetas para keto, vegano, celíaco o diabético.</span>
-          </p>
+          <div className="w-5 h-5 rounded bg-emerald-950/60 flex items-center justify-center border border-emerald-800 shrink-0 mt-0.5">
+            <Check className="w-3 h-3 text-emerald-400" />
+          </div>
+          <div>
+            <p className="text-xs font-bold text-white font-serif">Nutrición y Salud 100% Personalizada</p>
+            <p className="text-[11px] text-stone-300 leading-relaxed">
+              Motor de filtros avanzados de salud que excluye ingredientes no permitidos según alergias (huevo, soja, leche, etc.), dietas específicas (Keto, Vegana, Paleo, etc.) o condiciones médicas (como hipertensión o celiaquía / Sin TACC).
+            </p>
+          </div>
         </div>
 
-        {/* Item 4 */}
+        {/* Planificación */}
         <div className="flex items-start gap-2.5">
-          <Check className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
-          <p className="text-xs sm:text-xs leading-relaxed">
-            <strong className="text-white font-bold font-serif">4. Control de Vencimientos:</strong>{" "}
-            <span className="text-stone-300">alertas antes de que se arruine cualquier alimento.</span>
-          </p>
+          <div className="w-5 h-5 rounded bg-emerald-950/60 flex items-center justify-center border border-emerald-800 shrink-0 mt-0.5">
+            <Check className="w-3 h-3 text-emerald-400" />
+          </div>
+          <div>
+            <p className="text-xs font-bold text-white font-serif">Planificación y Cocina sin Estrés</p>
+            <p className="text-[11px] text-stone-300 leading-relaxed">
+              Genera recetas paso a paso con sugerencias de presentación, tips interactivos, acceso directo a opiniones de otros cocineros ("Tip Cookpad") y un cronograma semanal automático.
+            </p>
+          </div>
         </div>
 
-        {/* Item 5 */}
+        {/* WhatsApp */}
         <div className="flex items-start gap-2.5">
-          <Check className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
-          <p className="text-xs sm:text-xs leading-relaxed">
-            <strong className="text-white font-bold font-serif">5. Soporte técnico vía email:</strong>{" "}
-            <span className="text-stone-300">te ayudamos si algo no funciona como esperamos.</span>
-          </p>
+          <div className="w-5 h-5 rounded bg-emerald-950/60 flex items-center justify-center border border-emerald-800 shrink-0 mt-0.5">
+            <Check className="w-3 h-3 text-emerald-400" />
+          </div>
+          <div>
+            <p className="text-xs font-bold text-white font-serif">Conexión Express con WhatsApp 🇦🇷</p>
+            <p className="text-[11px] text-stone-300 leading-relaxed">
+              Enviá resúmenes impecables de recetas a un chat y generá listas de compras unificadas con un click, listas para que el encargado del súper las vaya tachando casillero por casillero (¡Que no falte nada para los mates!).
+            </p>
+          </div>
+        </div>
+
+        {/* Multiplataforma */}
+        <div className="flex items-start gap-2.5">
+          <div className="w-5 h-5 rounded bg-emerald-950/60 flex items-center justify-center border border-emerald-800 shrink-0 mt-0.5">
+            <Check className="w-3 h-3 text-emerald-400" />
+          </div>
+          <div>
+            <p className="text-xs font-bold text-white font-serif">Seguridad y Flexibilidad Multiplataforma</p>
+            <p className="text-[11px] text-stone-300 leading-relaxed">
+              Gestioná tu inventario sincronizado de forma segura y cambiá el modo de visualización entre Celular y Computadora según te resulte más cómodo.
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* BONO box inside the card corresponding to the screenshot */}
-      <div className="bg-emerald-950/20 border border-emerald-500/20 p-3 rounded-2xl flex items-start gap-2.5">
-        <Gift className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
-        <div className="text-xs leading-relaxed">
-          <p className="text-emerald-400 font-extrabold uppercase tracking-wide text-[10px]">
-             BONO: Recetario Desinflamatorio
-          </p>
-          <p className="text-emerald-100/70 text-[10px]">
-            solo para los primeros 200 compradores.
+      {/* BONO PDF Manual highlight */}
+      <div className="bg-emerald-950/40 border border-emerald-500/20 p-4 rounded-2xl space-y-2">
+        <div className="flex items-center gap-2">
+          <Gift className="w-4 h-4 text-emerald-400 shrink-0" />
+          <p className="text-emerald-400 font-extrabold uppercase tracking-wider text-[11px]">
+             ¡REGALO DE HOY! MANUAL PASO A PASO (PDF)
           </p>
         </div>
+        <p className="text-stone-200 text-xs leading-relaxed">
+          Recibirás de inmediato un <span className="text-white font-bold">Manual instructivo PDF con todas las instrucciones de cómo usar la aplicación paso a paso</span>, ilustrado con imágenes reales de la app para que comiences a optimizar hoy mismo.
+        </p>
       </div>
     </div>
   ), []);
@@ -216,29 +261,49 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
   const bonusCard = useMemo(() => (
     <div className="bg-gradient-to-br from-emerald-50 to-stone-50 border-2 border-emerald-500/30 p-6 sm:p-8 rounded-3xl max-w-xl mx-auto space-y-5 shadow-lg relative overflow-hidden text-left">
       <div className="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-black tracking-widest uppercase px-3.5 py-1.5 rounded-bl-2xl shadow-sm">
-        REGALO EXCLUSIVO
+        REGALO DUPLO EXCLUSIVO
       </div>
 
-      <div className="space-y-3 pt-2">
+      <div className="space-y-4 pt-2">
         <span className="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-800 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
           <Gift className="w-3.5 h-3.5 text-emerald-700" />
-          <span>¡Bono regalo 100% gratis hoy!</span>
+          <span>¡2 Bonos de regalo 100% gratis hoy!</span>
         </span>
 
         <h4 className="font-serif font-black text-emerald-950 text-base sm:text-lg tracking-tight leading-snug">
-          Recetario Desinflamatorio (PDF) — de Regalo
+          Te llevás GRATIS estos recursos prácticos con tu acceso de hoy:
         </h4>
 
-        <p className="text-stone-700 text-xs sm:text-sm leading-relaxed">
-          Platos ultra rápidos y deliciosos sin gluten ni lácteos para depurar tu cuerpo, deshincharte y optimizar tu digestión en menos de 15 minutos. Te lo llevás gratis únicamente comprando hoy.
-        </p>
-
-        <div className="bg-emerald-600/5 border border-emerald-200/50 p-3 sm:p-4 rounded-2xl flex items-center justify-between gap-3 text-xs">
-          <div className="space-y-0.5">
-            <p className="text-stone-500 line-through text-[11px]">Valor de lista: $12.500 ARS</p>
-            <p className="text-emerald-800 font-extrabold text-[12px]">Sin costo para vos hoy</p>
+        {/* Bonus 1 */}
+        <div className="border border-stone-200 bg-white p-4 rounded-2xl space-y-2 shadow-xs">
+          <div className="flex items-center gap-2">
+            <span className="text-emerald-600 font-extrabold text-sm">📕</span>
+            <p className="text-stone-900 font-bold font-serif text-sm">
+              Bono 1: Manual de Instrucciones Paso a Paso (PDF)
+            </p>
           </div>
-          <span className="font-black text-emerald-700 uppercase tracking-widest text-[11px] bg-emerald-100 px-3 py-1 rounded-lg">REGALO GRATUITO</span>
+          <p className="text-stone-700 text-xs leading-relaxed">
+            Un instructivo completo para el <strong className="font-bold text-stone-900">Asistente de Cocina Inteligente</strong> con capturas de la aplicación real, diseñado para optimizar tus platos, ahorrar tiempo y dinero, y llevar una alimentación sumamente saludable sin desperdiciar nada.
+          </p>
+          <div className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest bg-emerald-100/60 px-2 py-0.5 rounded inline-block">
+            VALOR: $9.500 ARS | HOY GRATIS
+          </div>
+        </div>
+
+        {/* Bonus 2 */}
+        <div className="border border-stone-200 bg-white p-4 rounded-2xl space-y-2 shadow-xs">
+          <div className="flex items-center gap-2">
+            <span className="text-emerald-600 font-extrabold text-sm">🥗</span>
+            <p className="text-stone-900 font-bold font-serif text-sm">
+              Bono 2: Recetario Desinflamatorio Express (PDF)
+            </p>
+          </div>
+          <p className="text-stone-700 text-xs leading-relaxed">
+            Platos ultra rápidos y deliciosos sin gluten ni lácteos para depurar tu cuerpo, deshincharte y optimizar tu digestión en menos de 15 minutos. Te lo llevás gratis únicamente comprando hoy.
+          </p>
+          <div className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest bg-emerald-100/60 px-2 py-0.5 rounded inline-block">
+            VALOR: $12.500 ARS | HOY GRATIS
+          </div>
         </div>
       </div>
 
@@ -259,6 +324,101 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
       </div>
     </div>
   ), [bonusSeats]);
+
+  const guideSection = useMemo(() => (
+    <div className="max-w-xl mx-auto bg-stone-100 border border-stone-200/80 p-6 sm:p-8 rounded-3xl shadow-md text-left space-y-6">
+      <div className="text-center space-y-1.5">
+        <span className="text-[10px] font-black tracking-widest text-[#1b3d2b] uppercase bg-emerald-100 px-3 py-0.5 rounded-full inline-block">
+          FÁCIL Y SEGURO
+        </span>
+        <h4 className="font-serif font-black text-stone-950 text-lg sm:text-xl tracking-tight leading-snug">
+          Guía Paso a Paso para una Experiencia Exitosa
+        </h4>
+        <p className="text-xs text-stone-600 leading-relaxed">
+          Para sacarle el 100% de provecho a la aplicación y disfrutar de todos sus beneficios, este es el camino ideal:
+        </p>
+      </div>
+
+      <div className="space-y-5">
+        {/* Step 1 */}
+        <div className="flex items-start gap-3.5">
+          <span className="w-7 h-7 rounded-full bg-[#1b3d2b] text-[#d1fae5] flex items-center justify-center font-bold font-serif text-sm shrink-0">
+            1
+          </span>
+          <div className="space-y-1">
+            <p className="font-serif font-black text-stone-900 text-xs sm:text-sm">Configurá el Perfil de tu Hogar</p>
+            <p className="text-stone-700 text-xs leading-relaxed">
+              Antes de empezar, indicá tus opciones de <strong className="font-bold">Salud, Alergias y Dietas</strong> en el panel de configuración. De esta forma, cada receta que genere la IA estará perfectamente filtrada. Si hay un celíaco en la casa, todas las harinas sugeridas serán <span className="text-emerald-800 font-bold">Sin TACC</span>; si hay alguien con hipertensión, el asistente adaptará las instrucciones para cocinar sin sal común.
+            </p>
+          </div>
+        </div>
+
+        {/* Step 2 */}
+        <div className="flex items-start gap-3.5">
+          <span className="w-7 h-7 rounded-full bg-[#1b3d2b] text-[#d1fae5] flex items-center justify-center font-bold font-serif text-sm shrink-0">
+            2
+          </span>
+          <div className="space-y-1">
+            <p className="font-serif font-black text-stone-900 text-xs sm:text-sm">Pasá Limpio tu Inventario (Tu Heladera)</p>
+            <p className="text-stone-700 text-xs leading-relaxed">
+              Ingresá al gestor de inventario y anotá qué ingredientes tenés disponibles (ej: pollo, cebolla, arroz, huevos) con sus cantidades y estimación de vencimiento. Si tenés un producto que vence pronto, activá la casilla <strong className="text-amber-700 font-bold">Urgente ⚠️</strong>. La IA le dará prioridad absoluta en la planificación para evitar que se eche a perder.
+            </p>
+          </div>
+        </div>
+
+        {/* Step 3 */}
+        <div className="flex items-start gap-3.5">
+          <span className="w-7 h-7 rounded-full bg-[#1b3d2b] text-[#d1fae5] flex items-center justify-center font-bold font-serif text-sm shrink-0">
+            3
+          </span>
+          <div className="space-y-1">
+            <p className="font-serif font-black text-stone-900 text-xs sm:text-sm">Generá tu Plan de Cocina Inteligente</p>
+            <p className="text-stone-700 text-xs leading-relaxed">
+              Con tu heladera cargada y tus filtros de salud listos, presioná el botón para generar el Plan de Cocina. La IA analizará tus ingredientes con precisión quirúrgica y te sugerirá un menú completo detallándote qué platos podés cocinar de inmediato y para cuáles te faltan detalles mínimos.
+            </p>
+          </div>
+        </div>
+
+        {/* Step 4 */}
+        <div className="flex items-start gap-3.5">
+          <span className="w-7 h-7 rounded-full bg-[#1b3d2b] text-[#d1fae5] flex items-center justify-center font-bold font-serif text-sm shrink-0">
+            4
+          </span>
+          <div className="space-y-1">
+            <p className="font-serif font-black text-stone-900 text-xs sm:text-sm">Cocinar de Forma Interactiva</p>
+            <p className="text-stone-700 text-xs leading-relaxed">
+              Al abrir una receta sugerida, disponés del <strong className="font-bold">Paso a Paso Interactivo</strong> para ir tachando tareas a medida que avanzás. Y si querés ver variantes o secretos de otros cocineros, disponés del botón <strong className="text-emerald-800 font-bold">"Tip Cookpad"</strong> para buscar al instante opiniones en la comunidad.
+            </p>
+          </div>
+        </div>
+
+        {/* Step 5 */}
+        <div className="flex items-start gap-3.5">
+          <span className="w-7 h-7 rounded-full bg-[#1b3d2b] text-[#d1fae5] flex items-center justify-center font-bold font-serif text-sm shrink-0">
+            5
+          </span>
+          <div className="space-y-1">
+            <p className="font-serif font-black text-stone-900 text-xs sm:text-sm">Armá la Lista de Compras y Compartí</p>
+            <p className="text-stone-700 text-xs leading-relaxed">
+              Agregá productos cotidianos con un click (como yerba o aceite) usando los atajos rápidos. Copiá la lista completa y mandala por WhatsApp al encargado de hacer las compras, con casilleros listos para ir tachando. ¡Y listos para disfrutar de una comida casera y organizada!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl flex items-start gap-2.5">
+        <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5 text-[#1b3d2b] font-bold text-xs">
+          💡
+        </div>
+        <div>
+          <p className="text-[#1b3d2b] font-bold text-xs">Consejo Pro para el Éxito Continuo</p>
+          <p className="text-stone-700 text-[11px] leading-relaxed">
+            Mantené tu inventario actualizado. Cada vez que cocines un plato o hagas una compra grande, dedica un minuto a ajustar las cantidades en el panel de inventario. Esto hará que las futuras sugerencias de la IA sean increíblemente precisas y eficientes.
+          </p>
+        </div>
+      </div>
+    </div>
+  ), []);
 
   const creadoraSection = null;
 
@@ -332,29 +492,28 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         </div>
 
         {/* Tarjeta de checkout premium */}
-        <div className="bg-stone-900/90 border border-stone-800 p-6 md:p-8 rounded-3xl max-w-sm mx-auto space-y-6 shadow-2xl relative">
+        <div className="bg-stone-900/90 border border-emerald-500/20 p-6 md:p-8 rounded-3xl max-w-sm mx-auto space-y-6 shadow-2xl relative">
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[9px] font-extrabold px-3 py-1 rounded-full tracking-wider uppercase whitespace-nowrap">
-            ¡INCLUYE EL BONO RECETARIO!
+            ¡INCLUYE ACCESO VITALICIO Y BONOS PDF!
           </div>
 
-          <div className="space-y-3">
-            <div className="flex flex-col items-center justify-center gap-1">
-              <span className="text-stone-400 text-xs sm:text-sm line-through font-medium">
-                Antes: $69.900 ARS
-              </span>
-              <span className="text-emerald-400 font-extrabold text-xs tracking-wide">
-                (más de un 70% de descuento)
-              </span>
-            </div>
-            
+          <div className="space-y-4">
             <div className="py-2 text-center">
-              <span className="text-[10px] text-stone-400 uppercase tracking-widest font-bold block mb-1">PRECIO DE HOY:</span>
+              <span className="text-[10px] text-stone-400 uppercase tracking-widest font-bold block mb-1">UN SOLO PAGO DE LANZAMIENTO:</span>
               <h3 className="text-5xl md:text-6xl font-serif font-black text-emerald-400 tracking-tight leading-none drop-shadow-[0_4px_12px_rgba(52,211,153,0.18)]">
                 $17.900 ARS
               </h3>
+              <span className="text-[10px] text-emerald-500 font-bold tracking-wider block mt-1">SIN CUOTAS NI MENSUALIDADES HOY</span>
             </div>
             
-            <p className="text-[10px] text-stone-300 uppercase tracking-widest leading-loose font-medium">Solo un pago • Sin suscripciones mensuales</p>
+            <div className="bg-emerald-950/40 border border-emerald-500/20 rounded-2xl p-3.5 text-left space-y-2">
+              <p className="text-stone-200 text-xs leading-relaxed font-semibold">
+                ⭐ <span className="text-emerald-400">Acceso de por vida</span> por un único pago de $17.900 ARS.
+              </p>
+              <p className="text-stone-300 text-[11px] leading-relaxed">
+                Esta oferta especial es <span className="text-emerald-300 font-bold">solo para los primeros 200 accesos</span>. Una vez agotados los cupos, la aplicación pasará a tener un abono o suscripción mensual obligatoria.
+              </p>
+            </div>
           </div>
 
           {/* Gran botón de compra Shopify */}
@@ -420,6 +579,8 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         {includedSection}
 
         {bonusCard}
+
+        {guideSection}
 
         {notificationSection}
 
