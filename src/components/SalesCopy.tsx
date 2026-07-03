@@ -390,15 +390,19 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
             </span>
             <span>CUPOS DE BONIFICACIÓN DISPONIBLES:</span>
           </span>
-          <span className={`text-emerald-700 font-extrabold text-[11px] bg-emerald-100 px-2.5 py-0.5 rounded-sm self-start sm:self-auto uppercase transition-all duration-300 ${justUpdatedSeats ? 'scale-110 bg-emerald-200 text-emerald-900 ring-2 ring-emerald-400 font-black' : ''}`}>
+          <span className={`text-emerald-700 font-extrabold text-[11px] bg-emerald-100 px-2.5 py-0.5 rounded-sm self-start sm:self-auto uppercase transition-transform duration-300 ${justUpdatedSeats ? 'scale-110 bg-emerald-200 text-emerald-900 ring-2 ring-emerald-400 font-black' : ''}`}>
             ¡Solo quedan {bonusSeats} de 200 lugares!
           </span>
         </div>
         
         <div className="w-full bg-stone-200 h-3 rounded-full overflow-hidden relative shadow-inner border border-stone-200/50">
           <div 
-            className={`bg-gradient-to-r from-emerald-500 to-emerald-600 h-full rounded-full transition-all duration-1000 ease-in-out shadow-[0_0_12px_rgba(16,185,129,0.5)] ${justUpdatedSeats ? 'brightness-110 animate-pulse' : ''}`}
-            style={{ width: `${((200 - bonusSeats) / 200) * 100}%` }}
+            className={`bg-gradient-to-r from-emerald-500 to-emerald-600 h-full rounded-full transition-transform duration-1000 ease-in-out shadow-[0_0_12px_rgba(16,185,129,0.5)] ${justUpdatedSeats ? 'brightness-110 animate-pulse' : ''}`}
+            style={{ 
+              width: '100%',
+              transform: `scaleX(${((200 - bonusSeats) / 200)})`,
+              transformOrigin: 'left'
+            }}
           />
           {/* Ambient scanning/glowing light effect on the progress bar */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent w-1/3 h-full animate-shimmer pointer-events-none" />
@@ -560,9 +564,9 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
   const creadoraSection = null;
 
   const notificationSection = useMemo(() => (
-    <div className="max-w-xl mx-auto transition-all duration-500">
-      <div className={`bg-stone-900 text-stone-100 p-3 rounded-2xl border border-stone-850 flex items-center gap-3 shadow-md text-left transition-all duration-500 ${
-        showNotification ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"
+    <div className="max-w-xl mx-auto">
+      <div className={`bg-stone-900 text-stone-100 p-3 rounded-2xl border border-stone-850 flex items-center gap-3 shadow-md text-left transition-[opacity,transform] duration-500 ease-out ${
+        showNotification ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1 pointer-events-none"
       }`}>
         <div className="w-7 h-7 rounded-lg bg-emerald-600/20 text-emerald-400 flex items-center justify-center shrink-0">
           <Bell className="w-3.5 h-3.5 animate-bounce" />
