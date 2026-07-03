@@ -5,6 +5,7 @@
   --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   --animate-marquee: marquee 25s linear infinite;
+  --animate-shimmer: shimmer 2.5s ease-in-out infinite;
 
   @keyframes marquee {
     0% {
@@ -12,6 +13,15 @@
     }
     100% {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(200%);
     }
   }
 }

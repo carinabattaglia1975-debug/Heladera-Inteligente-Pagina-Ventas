@@ -65,17 +65,18 @@ const TESTIMONIALS = [
 ];
 
 const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenCheckout }) => {
-  // Bonus seats countdown starting around 18 and randomly going down to 7, stays there
+  // Bonus seats countdown starting around 14 and dynamically ticking down & fluctuating
   const [bonusSeats, setBonusSeats] = useState(() => {
     const stored = localStorage.getItem("bonus_seats_left_count");
     if (stored) {
       const parsed = parseInt(stored, 10);
-      return parsed >= 7 && parsed <= 35 ? parsed : 18;
+      return parsed >= 5 && parsed <= 16 ? parsed : 12;
     }
-    return 18;
+    return 14;
   });
 
-  // Recent Purchase Toast Notification State
+  const [justUpdatedSeats, setJustUpdatedSeats] = useState(false);
+  const [activeViewers, setActiveViewers] = useState(8);
   const [currentPurchaseIndex, setCurrentPurchaseIndex] = useState(0);
   const [showNotification, setShowNotification] = useState(true);
 
@@ -83,16 +84,84 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
     localStorage.setItem("bonus_seats_left_count", bonusSeats.toString());
   }, [bonusSeats]);
 
-  // Tick down bonus seats
+  // Tick down and fluctuate bonus seats so it is never static
   useEffect(() => {
+    // 1. Initial live updates sequence on page load to immediately make it feel extremely active!
+    const t1 = setTimeout(() => {
+      setBonusSeats((prev) => {
+        if (prev > 11) {
+          setJustUpdatedSeats(true);
+          setTimeout(() => setJustUpdatedSeats(false), 1000);
+          return 11;
+        }
+        return prev;
+      });
+    }, 3000);
+
+    const t2 = setTimeout(() => {
+      setBonusSeats((prev) => {
+        if (prev > 9) {
+          setJustUpdatedSeats(true);
+          setTimeout(() => setJustUpdatedSeats(false), 1000);
+          return 9;
+        }
+        return prev;
+      });
+    }, 8000);
+
+    const t3 = setTimeout(() => {
+      setBonusSeats((prev) => {
+        if (prev > 7) {
+          setJustUpdatedSeats(true);
+          setTimeout(() => setJustUpdatedSeats(false), 1000);
+          return 7;
+        }
+        return prev;
+      });
+    }, 14000);
+
+    // 2. Ongoing live fluctuation interval (between 5 and 10) so it keeps moving and is never static!
     const interval = setInterval(() => {
       setBonusSeats((prev) => {
-        if (prev <= 7) return 7;
-        const decrement = Math.random() > 0.82 ? 1 : 0;
-        return prev - decrement;
+        let next = prev;
+        const rand = Math.random();
+        
+        // If it's 10 or more, force decrement
+        if (prev >= 10) {
+          next = prev - 1;
+        } else if (prev <= 5) {
+          // If it hits 5, let it go back up to 6 or 7 simulating expired reservations
+          next = prev + (rand > 0.4 ? 1 : 0);
+        } else {
+          // Fluctuate: 50% chance to decrement, 20% chance to increment (expired cart), 30% chance to stay
+          if (rand < 0.45) {
+            next = prev - 1;
+          } else if (rand > 0.8) {
+            next = prev + 1;
+          }
+        }
+        
+        if (next !== prev) {
+          setJustUpdatedSeats(true);
+          setTimeout(() => setJustUpdatedSeats(false), 1000);
+        }
+        return next;
       });
-    }, 15000);
-    return () => clearInterval(interval);
+      
+      // Also occasionally update active viewers count slightly
+      setActiveViewers((prev) => {
+        const delta = Math.random() > 0.5 ? 1 : -1;
+        const next = prev + delta;
+        return next >= 5 && next <= 12 ? next : 8;
+      });
+    }, 11000);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearInterval(interval);
+    };
   }, []);
 
   // Cycle recent purchases
@@ -261,7 +330,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
   const bonusCard = useMemo(() => (
     <div className="bg-gradient-to-br from-emerald-50 to-stone-50 border-2 border-emerald-500/30 p-6 sm:p-8 rounded-3xl max-w-xl mx-auto space-y-5 shadow-lg relative overflow-hidden text-left">
       <div className="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-black tracking-widest uppercase px-3.5 py-1.5 rounded-bl-2xl shadow-sm">
-        REGALO DUPLO EXCLUSIVO
+        PACK DE BONOS EXCLUSIVOS
       </div>
 
       <div className="space-y-4 pt-2">
@@ -286,7 +355,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
             Un instructivo completo para el <strong className="font-bold text-stone-900">Asistente de Cocina Inteligente</strong> con capturas de la aplicación real, diseñado para optimizar tus platos, ahorrar tiempo y dinero, y llevar una alimentación sumamente saludable sin desperdiciar nada.
           </p>
           <div className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest bg-emerald-100/60 px-2 py-0.5 rounded inline-block">
-            VALOR: $9.500 ARS | HOY GRATIS
+            🎁 GRATIS al comprar hoy
           </div>
         </div>
 
@@ -301,29 +370,44 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
           <p className="text-stone-700 text-xs leading-relaxed">
             Platos ultra rápidos y deliciosos sin gluten ni lácteos para depurar tu cuerpo, deshincharte y optimizar tu digestión en menos de 15 minutos. Te lo llevás gratis únicamente comprando hoy.
           </p>
-          <div className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest bg-emerald-100/60 px-2 py-0.5 rounded inline-block">
-            VALOR: $12.500 ARS | HOY GRATIS
+          <div className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest bg-[#d1fae5] text-[#065f46] px-2 py-0.5 rounded inline-block">
+            🎁 GRATIS al comprar hoy
           </div>
         </div>
       </div>
 
       <div className="pt-4 border-t border-emerald-600/10 space-y-2">
         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1.5 text-xs">
-          <span className="font-bold text-stone-900 uppercase tracking-wider text-[9px]">CUPOS DE BONIFICACIÓN DISPONIBLES:</span>
-          <span className="text-emerald-700 font-extrabold text-[11px] bg-emerald-100 px-2.5 py-0.5 rounded-sm self-start sm:self-auto uppercase">
+          <span className="font-bold text-stone-950 uppercase tracking-wider text-[9px] flex items-center gap-1.5">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>CUPOS DE BONIFICACIÓN DISPONIBLES:</span>
+          </span>
+          <span className={`text-emerald-700 font-extrabold text-[11px] bg-emerald-100 px-2.5 py-0.5 rounded-sm self-start sm:self-auto uppercase transition-all duration-300 ${justUpdatedSeats ? 'scale-110 bg-emerald-200 text-emerald-900 ring-2 ring-emerald-400 font-black' : ''}`}>
             ¡Solo quedan {bonusSeats} de 200 lugares!
           </span>
         </div>
         
-        <div className="w-full bg-stone-200 h-2 rounded-full overflow-hidden">
+        <div className="w-full bg-stone-200 h-3 rounded-full overflow-hidden relative shadow-inner border border-stone-200/50">
           <div 
-            className="bg-emerald-600 h-full rounded-full transition-all duration-1000 ease-in-out"
-            style={{ width: `${(bonusSeats / 200) * 100}%` }}
+            className={`bg-gradient-to-r from-emerald-500 to-emerald-600 h-full rounded-full transition-all duration-1000 ease-in-out shadow-[0_0_12px_rgba(16,185,129,0.5)] ${justUpdatedSeats ? 'brightness-110 animate-pulse' : ''}`}
+            style={{ width: `${((200 - bonusSeats) / 200) * 100}%` }}
           />
+          {/* Ambient scanning/glowing light effect on the progress bar */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent w-1/3 h-full animate-shimmer pointer-events-none" />
+        </div>
+
+        <div className="flex justify-between items-center text-[10px] text-stone-500 font-mono pt-0.5">
+          <span className="font-bold text-emerald-700">{Math.round(((200 - bonusSeats) / 200) * 100)}% Reservado</span>
+          <span className="animate-pulse text-emerald-600 font-bold flex items-center gap-1">
+            ● {activeViewers} personas mirando esta oferta ahora
+          </span>
         </div>
       </div>
     </div>
-  ), [bonusSeats]);
+  ), [bonusSeats, justUpdatedSeats, activeViewers]);
 
   const guideSection = useMemo(() => (
     <div className="max-w-xl mx-auto bg-stone-100 border border-stone-200/80 p-6 sm:p-8 rounded-3xl shadow-md text-left space-y-6">
@@ -417,6 +501,54 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
           </p>
         </div>
       </div>
+    </div>
+  ), []);
+
+  const upperCtaButton = useMemo(() => (
+    <div className="max-w-md mx-auto text-center pt-2 pb-1 px-2">
+      <button
+        onClick={handlePurchase}
+        className="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-700 text-stone-50 border-none px-6 py-4 rounded-xl font-serif font-black text-md md:text-lg tracking-wide shadow-md active:scale-[0.99] transition-all flex items-center justify-center gap-2"
+      >
+        <ShoppingBag className="w-5 h-5 text-white shrink-0" />
+        <span>QUIERO MI ACCESO + EL BONO</span>
+      </button>
+      <p className="text-[10px] text-stone-500 font-mono mt-1.5 leading-normal">
+        Único pago de $17.900 ARS • Acceso de por vida
+      </p>
+    </div>
+  ), [handlePurchase]);
+
+  const recipesSearchBenefit = useMemo(() => (
+    <div className="max-w-xl mx-auto bg-stone-100 border border-stone-200/80 p-6 sm:p-7 rounded-3xl shadow-md text-left space-y-4">
+      <div className="flex items-center gap-2.5">
+        <span className="text-xl">🇦🇷</span>
+        <h4 className="font-serif font-black text-stone-950 text-base sm:text-lg tracking-tight leading-snug">
+          Buscá recetas y accedé directo a tus sitios favoritos sin salir de la app
+        </h4>
+      </div>
+      <p className="text-stone-700 text-xs sm:text-sm leading-relaxed">
+        ¿Querés buscar una receta específica o ver variantes locales? Desde nuestra plataforma, el Asistente te conecta con un solo clic con las principales fuentes culinarias de la Argentina. Buscá tus preparaciones favoritas y accedé directamente a:
+      </p>
+      
+      <div className="grid grid-cols-3 gap-3 pt-1">
+        <div className="bg-white p-3 rounded-2xl border border-stone-200 text-center space-y-1 shadow-2xs">
+          <p className="text-xs font-bold font-serif text-[#f27a1a]">Cookpad</p>
+          <p className="text-[10px] text-stone-500">Comunidad y tips</p>
+        </div>
+        <div className="bg-white p-3 rounded-2xl border border-stone-200 text-center space-y-1 shadow-2xs">
+          <p className="text-xs font-bold font-serif text-[#d92a1c]">Cocineros Arg</p>
+          <p className="text-[10px] text-stone-500">Clásicos locales</p>
+        </div>
+        <div className="bg-white p-3 rounded-2xl border border-stone-200 text-center space-y-1 shadow-2xs">
+          <p className="text-xs font-bold font-serif text-[#f12c66]">Paulina Cocina</p>
+          <p className="text-[10px] text-stone-500">Fácil y rápido</p>
+        </div>
+      </div>
+      
+      <p className="text-[10px] text-stone-500 italic text-center leading-normal">
+        *Integración optimizada para encontrar ideas rápidas adaptadas a los ingredientes reales de tu heladera.
+      </p>
     </div>
   ), []);
 
@@ -576,7 +708,11 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
 
         {heroSection}
 
+        {upperCtaButton}
+
         {includedSection}
+
+        {recipesSearchBenefit}
 
         {bonusCard}
 
