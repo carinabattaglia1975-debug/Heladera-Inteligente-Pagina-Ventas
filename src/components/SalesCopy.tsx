@@ -155,10 +155,10 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         <span>Resultado del Test</span>
       </span>
       <h2 className="text-2xl sm:text-3xl font-serif font-black text-stone-950 tracking-tight leading-tight max-w-2xl mx-auto">
-        El test no miente: Cada mes se te va más plata de la que imaginás en alimentos que no llegás a consumir. Frená el desperdicio hoy!
+        ¡Excelente! Ya sabés cuánto dinero podrías ahorrar cada mes.
       </h2>
       <p className="text-stone-700 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-        Ya viste a dónde se va tu plata. Es momento de automatizar tus cenas, usar lo que ya tenés en casa y cocinar rico en segundos, sin descargar nada.
+        Ahora descubrí cómo Heladera Inteligente hace posible ese ahorro y todo lo que recibís hoy con tu acceso de por vida.
       </p>
     </div>
   ), []);
