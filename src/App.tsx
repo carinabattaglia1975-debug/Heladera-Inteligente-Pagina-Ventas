@@ -82,11 +82,11 @@ export default function App() {
         <div className="flex whitespace-nowrap min-w-full">
           {/* Infinite Marquee text simulating a slider */}
           <div className="flex shrink-0 items-center justify-around gap-6 min-w-full animate-marquee uppercase">
-            <span>🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA • 🔥 SOLO QUEDAN {seatsLeft} DE 200 CUPOS AL PRECIO ACTUAL • 🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA •</span>
+            <span>🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA • 🔥 ACCESO DE POR VIDA PARA LOS PRIMEROS 200 • 🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA •</span>
           </div>
           {/* Duplicate for flawless infinite scrolling loop */}
           <div className="flex shrink-0 items-center justify-around gap-6 min-w-full animate-marquee uppercase" aria-hidden="true">
-            <span>🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA • 🔥 SOLO QUEDAN {seatsLeft} DE 200 CUPOS AL PRECIO ACTUAL • 🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA •</span>
+            <span>🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA • 🔥 ACCESO DE POR VIDA PARA LOS PRIMEROS 200 • 🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA •</span>
           </div>
         </div>
       </div>

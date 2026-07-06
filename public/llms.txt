@@ -2,20 +2,23 @@
 
 > El método definitivo para organizar tu heladera, planificar tus comidas semanales y ahorrar dinero usando inteligencia artificial.
 
-## Descripción General
+Esta es la documentación y presentación oficial para modelos de lenguaje del Asistente de Cocina Inteligente Premium de Heladera Inteligente™.
 
-Heladera Inteligente™ es una aplicación interactiva que ayuda a los usuarios a registrar los ingredientes disponibles en su hogar para generar automáticamente menús express saludables y personalizados en menos de 15 minutos, reduciendo drásticamente el desperdicio de alimentos.
+## Secciones y Enlaces Principales
 
-## Secciones Principales
+- [Presentación y Página de Ventas](/) - Acceso principal a la presentación de la aplicación de Heladera Inteligente y oferta de lanzamiento vitalicia.
+- [Demostración Interactiva de la App](/#app-demo-live) - Panel de demostración en tiempo real donde los usuarios registran sus ingredientes y obtienen planificación de menús.
+- [Oferta Exclusiva y Compra](/#oferta-cierre) - Detalles sobre la promoción especial por un único pago de $17.900 ARS que incluye acceso de por vida y bonos de regalo.
+- [Preguntas Frecuentes y Guía de Uso](/#sales-page) - Guía paso a paso sobre cómo sacarle el 100% de provecho al copiloto de cocina inteligente.
 
-- **Resultados del Test**: Visualización interactiva del potencial ahorro mensual estimado y diagnóstico personalizado sobre hábitos de consumo.
-- **Detalles del Método 2H**: Explicación paso a paso de los dos pilares del método: Planificación y Preparación Express.
-- **Buscador de Recetas Integrado**: Herramienta de búsqueda para encontrar ideas rápidas y variantes locales directamente en las principales fuentes culinarias argentinas (Cookpad, Cocineros Argentinos, Paulina Cocina).
-- **Paquete de Bonos Exclusivos**: Acceso gratuito a recursos adicionales como el Manual de Instrucciones en PDF, el Recetario Desinflamatorio Express, y más.
-- **Acceso Directo al Checkout**: Botón de pago seguro para obtener acceso vitalicio a la plataforma.
+## Características y Recursos Incluidos
 
-## Información de la Oferta
+- [Método de Planificación Express](/#sales-page) - Pilares fundamentales del método de optimización culinaria para lograr desperdicio cero.
+- [Buscador de Recetas Integrado](/#sales-page) - Conexión rápida con Cookpad, Cocineros Argentinos y Paulina Cocina para encontrar ideas rápidas y adaptadas.
+- [Paquete de Bonos de Regalo](/#oferta-cierre) - Información sobre el Manual instructivo en PDF y el Recetario Desinflamatorio Express incluidos gratis hoy.
 
-- **Precio de Lanzamiento**: $17.900 ARS (Único pago, sin suscripciones mensuales).
-- **Garantía**: 7 días de satisfacción incondicional.
-- **Soporte**: aurevastudio2@gmail.com
+## Detalles de Soporte e Información
+
+- **Precio Final**: $17.900 ARS (pago único sin cargos mensuales).
+- **Garantía Comercial**: 7 días de devolución de dinero incondicional.
+- **Contacto de Soporte**: [Enviar correo de soporte](mailto:aurevastudio2@gmail.com) o escribir a aurevastudio2@gmail.com para asistencia técnica.
