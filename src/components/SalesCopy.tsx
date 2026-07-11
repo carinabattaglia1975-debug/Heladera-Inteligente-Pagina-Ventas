@@ -24,78 +24,79 @@ const SIMULATED_PURCHASES = [
 ];
 
 const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenCheckout }) => {
-  // Bonus seats countdown starting around 14 and dynamically ticking down & fluctuating
-  const [bonusSeats, setBonusSeats] = useState(() => {
-    const stored = localStorage.getItem("bonus_seats_left_count");
+  // Purchased seats count starting at 48 (24% of 200) and dynamically ticking UP over time
+  const [purchasedCount, setPurchasedCount] = useState(() => {
+    const stored = localStorage.getItem("purchased_seats_count");
     if (stored) {
       const parsed = parseInt(stored, 10);
-      return parsed >= 5 && parsed <= 16 ? parsed : 12;
+      return parsed >= 48 && parsed <= 65 ? parsed : 48;
     }
-    return 14;
+    return 48;
   });
 
+  const bonusSeats = useMemo(() => {
+    return 200 - purchasedCount;
+  }, [purchasedCount]);
+
   const [justUpdatedSeats, setJustUpdatedSeats] = useState(false);
-  const [activeViewers, setActiveViewers] = useState(8);
+  const [activeViewers, setActiveViewers] = useState(() => {
+    return Math.floor(Math.random() * (10 - 4 + 1)) + 4; // random between 4 and 10
+  });
   const [currentPurchaseIndex, setCurrentPurchaseIndex] = useState(0);
   const [showNotification, setShowNotification] = useState(true);
 
   useEffect(() => {
-    localStorage.setItem("bonus_seats_left_count", bonusSeats.toString());
-  }, [bonusSeats]);
+    localStorage.setItem("purchased_seats_count", purchasedCount.toString());
+  }, [purchasedCount]);
 
-  // Tick down and fluctuate bonus seats so it is never static
+  // Tick up the purchased seats count so remaining (bonusSeats) goes down
   useEffect(() => {
     // 1. Initial live updates sequence on page load to immediately make it feel extremely active!
     const t1 = setTimeout(() => {
-      setBonusSeats((prev) => {
-        if (prev > 11) {
+      setPurchasedCount((prev) => {
+        if (prev < 51) {
           setJustUpdatedSeats(true);
           setTimeout(() => setJustUpdatedSeats(false), 1000);
-          return 11;
+          return 51;
         }
         return prev;
       });
     }, 3000);
 
     const t2 = setTimeout(() => {
-      setBonusSeats((prev) => {
-        if (prev > 9) {
+      setPurchasedCount((prev) => {
+        if (prev < 54) {
           setJustUpdatedSeats(true);
           setTimeout(() => setJustUpdatedSeats(false), 1000);
-          return 9;
+          return 54;
         }
         return prev;
       });
     }, 8000);
 
     const t3 = setTimeout(() => {
-      setBonusSeats((prev) => {
-        if (prev > 7) {
+      setPurchasedCount((prev) => {
+        if (prev < 56) {
           setJustUpdatedSeats(true);
           setTimeout(() => setJustUpdatedSeats(false), 1000);
-          return 7;
+          return 56;
         }
         return prev;
       });
     }, 14000);
 
-    // 2. Ongoing live fluctuation interval (between 5 and 10) so it keeps moving and is never static!
+    // 2. Ongoing live fluctuation interval so it keeps moving and is never static!
     const interval = setInterval(() => {
-      setBonusSeats((prev) => {
+      setPurchasedCount((prev) => {
         let next = prev;
         const rand = Math.random();
         
-        // If it's 10 or more, force decrement
-        if (prev >= 10) {
-          next = prev - 1;
-        } else if (prev <= 5) {
-          // If it hits 5, let it go back up to 6 or 7 simulating expired reservations
-          next = prev + (rand > 0.4 ? 1 : 0);
+        // If it reaches 65 or more, stop auto-incrementing to keep it believable
+        if (prev >= 65) {
+          next = prev;
         } else {
-          // Fluctuate: 50% chance to decrement, 20% chance to increment (expired cart), 30% chance to stay
+          // Fluctuate: 45% chance to increase purchased seats count by 1 (someone buys)
           if (rand < 0.45) {
-            next = prev - 1;
-          } else if (rand > 0.8) {
             next = prev + 1;
           }
         }
@@ -106,19 +107,39 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         }
         return next;
       });
-      
-      // Also occasionally update active viewers count slightly
-      setActiveViewers((prev) => {
-        const delta = Math.random() > 0.5 ? 1 : -1;
-        const next = prev + delta;
-        return next >= 5 && next <= 12 ? next : 8;
-      });
     }, 11000);
 
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
       clearTimeout(t3);
+      clearInterval(interval);
+    };
+  }, []);
+
+  // Active viewers fluctuation (range 6 to 10 personas, updates every 4 seconds)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveViewers((prev) => {
+        const rand = Math.random();
+        let delta = 0;
+        if (rand < 0.4) {
+          delta = -1;
+        } else if (rand > 0.6) {
+          delta = 1;
+        }
+        
+        let next = prev + delta;
+        if (next < 6) {
+          next = 6;
+        } else if (next > 10) {
+          next = 10;
+        }
+        return next;
+      });
+    }, 4000);
+
+    return () => {
       clearInterval(interval);
     };
   }, []);

@@ -262,7 +262,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
             <span>CUPOS DE BONIFICACIÓN DISPONIBLES:</span>
           </span>
           <span className={`text-emerald-700 font-extrabold text-[11px] bg-emerald-100 px-2.5 py-0.5 rounded-sm self-start sm:self-auto uppercase transition-transform duration-300 ${justUpdatedSeats ? 'scale-110 bg-emerald-200 text-emerald-900 ring-2 ring-emerald-400 font-black' : ''}`}>
-            ¡Solo quedan {bonusSeats} de 200 lugares!
+            ¡SOLO QUEDAN {bonusSeats} DE 200 LUGARES!
           </span>
         </div>
         
@@ -271,7 +271,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
             className={`bg-gradient-to-r from-emerald-500 to-emerald-600 h-full rounded-full transition-transform duration-1000 ease-in-out shadow-[0_0_12px_rgba(16,185,129,0.5)] ${justUpdatedSeats ? 'brightness-110 animate-pulse' : ''}`}
             style={{ 
               width: '100%',
-              transform: `scaleX(${((200 - bonusSeats) / 200)})`,
+              transform: `scaleX(${(bonusSeats / 200)})`,
               transformOrigin: 'left'
             }}
           />
@@ -280,7 +280,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
         </div>
 
         <div className="flex justify-between items-center text-[10px] text-stone-700 font-mono pt-0.5">
-          <span className="font-bold text-emerald-700">{Math.round(((200 - bonusSeats) / 200) * 100)}% Reservado</span>
+          <span className="font-bold text-emerald-700">{Math.round((bonusSeats / 200) * 100)}% Reservado</span>
           <span className="animate-pulse text-emerald-600 font-bold flex items-center gap-1">
             ● {activeViewers} personas mirando esta oferta ahora
           </span>
