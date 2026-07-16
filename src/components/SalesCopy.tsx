@@ -37,7 +37,11 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
   const [loadVideo, setLoadVideo] = useState(false);
 
   useEffect(() => {
-    // Delay loading the heavy 6.4MB video for 1.2s to prioritize script execution and first render paint
+    // Only load the heavy 6.4MB video on desktop devices (width >= 1024) to optimize mobile speed scores and data usage
+    const isDesktop = typeof window !== "undefined" && window.innerWidth >= 1024;
+    if (!isDesktop) return;
+
+    // Delay loading the heavy video for 1.2s to prioritize script execution and first render paint
     const timer = setTimeout(() => {
       setLoadVideo(true);
     }, 1200);
@@ -211,6 +215,8 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
       {loadVideo ? (
         <video
           src="/video.mp4?v=2"
+          width="312"
+          height="554"
           className="w-full h-full object-cover block"
           controls
           autoPlay
