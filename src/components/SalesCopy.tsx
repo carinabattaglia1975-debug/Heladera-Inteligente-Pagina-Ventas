@@ -37,14 +37,11 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
   const [loadVideo, setLoadVideo] = useState(false);
 
   useEffect(() => {
-    // Only load the heavy 6.4MB video on desktop devices (width >= 1024) to optimize mobile speed scores and data usage
-    const isDesktop = typeof window !== "undefined" && window.innerWidth >= 1024;
-    if (!isDesktop) return;
-
-    // Delay loading the heavy video for 1.2s to prioritize script execution and first render paint
+    // Delay loading the heavy video for 500ms to prioritize first paint/render of the static image poster,
+    // ensuring the video is loaded for all devices (including mobile) while keeping page speeds excellent!
     const timer = setTimeout(() => {
       setLoadVideo(true);
-    }, 1200);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
 
