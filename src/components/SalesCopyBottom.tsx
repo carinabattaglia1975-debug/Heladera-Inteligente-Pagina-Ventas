@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { 
   ShieldCheck, 
   Check, 
@@ -7,7 +7,9 @@ import {
   CreditCard,
   MessageSquare,
   Gift,
-  Bell
+  Bell,
+  HelpCircle,
+  ChevronDown
 } from "lucide-react";
 
 interface SalesCopyBottomProps {
@@ -57,6 +59,12 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
   handlePurchase,
   handleScrollToOffer
 }) => {
+  const [openFaq, setOpenFaq] = useState<string | null>(null);
+
+  const toggleFaq = (id: string) => {
+    setOpenFaq((prev) => (prev === id ? null : id));
+  };
+
   const includedSection = useMemo(() => (
     <div className="max-w-xl mx-auto bg-stone-900 text-stone-100 p-6 sm:p-7 rounded-3xl shadow-xl border border-stone-850 text-left space-y-6">
       <div className="flex items-center justify-between gap-3 border-b border-stone-850 pb-3.5">
@@ -271,7 +279,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
             className={`bg-gradient-to-r from-emerald-500 to-emerald-600 h-full rounded-full transition-transform duration-1000 ease-in-out shadow-[0_0_12px_rgba(16,185,129,0.5)] ${justUpdatedSeats ? 'brightness-110 animate-pulse' : ''}`}
             style={{ 
               width: '100%',
-              transform: `scaleX(${(bonusSeats / 200)})`,
+              transform: `scaleX(${((200 - bonusSeats) / 200)})`,
               transformOrigin: 'left'
             }}
           />
@@ -280,7 +288,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
         </div>
 
         <div className="flex justify-between items-center text-[10px] text-stone-700 font-mono pt-0.5">
-          <span className="font-bold text-emerald-700">{Math.round((bonusSeats / 200) * 100)}% Reservado</span>
+          <span className="font-bold text-emerald-700">{Math.round(((200 - bonusSeats) / 200) * 100)}% Reservado</span>
           <span className="animate-pulse text-emerald-600 font-bold flex items-center gap-1">
             ● {activeViewers} personas mirando esta oferta ahora
           </span>
@@ -370,15 +378,28 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
         </div>
       </div>
 
-      <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl flex items-start gap-2.5">
-        <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5 text-[#1b3d2b] font-bold text-xs">
-          💡
+      <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl flex flex-col gap-3">
+        <div className="flex items-start gap-2.5">
+          <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5 text-[#1b3d2b] font-bold text-xs">
+            💡
+          </div>
+          <div>
+            <p className="text-[#1b3d2b] font-bold text-xs">Consejo Pro para el Éxito Continuo</p>
+            <p className="text-stone-700 text-[11px] leading-relaxed">
+              Mantené tu inventario actualizado. Cada vez que cocines un plato o hagas una compra grande, dedica un minuto a ajustar las cantidades en el panel de inventario. Esto hará que las futuras sugerencias de la IA sean increíblemente precisas y eficientes.
+            </p>
+          </div>
         </div>
-        <div>
-          <p className="text-[#1b3d2b] font-bold text-xs">Consejo Pro para el Éxito Continuo</p>
-          <p className="text-stone-700 text-[11px] leading-relaxed">
-            Mantené tu inventario actualizado. Cada vez que cocines un plato o hagas una compra grande, dedica un minuto a ajustar las cantidades en el panel de inventario. Esto hará que las futuras sugerencias de la IA sean increíblemente precisas y eficientes.
-          </p>
+        <div className="border-t border-emerald-200/60 pt-2.5 flex items-start gap-2.5">
+          <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5 text-[#1b3d2b] font-bold text-xs">
+            ✨
+          </div>
+          <div>
+            <p className="text-[#1b3d2b] font-bold text-xs">Personalización Dinámica</p>
+            <p className="text-stone-700 text-[11px] leading-relaxed">
+              Cada vez que generes tu plan, indicá tus preferencias del momento — salud, alergias, antojos del día, cantidad de comensales. Nada queda guardado como fijo: elegís de nuevo según lo que necesites hoy.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -517,6 +538,83 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
     </section>
   ), [handlePurchase]);
 
+  const faqSection = useMemo(() => {
+    const faqItems = [
+      {
+        id: "faq-1",
+        question: "¿Qué pasa si compro y siento que no es para mí?",
+        answer: "Tenés 7 días de garantía incondicional. Si no estás conforme, nos escribís y te devolvemos el 100% de tu dinero al instante, sin explicaciones ni trámites complicados. Apenas se procesa la devolución, tu acceso a la plataforma se cancela automáticamente — no tenés que hacer nada más de tu lado."
+      },
+      {
+        id: "faq-2",
+        question: "¿Cómo funciona la cancelación si pido el reembolso?",
+        answer: "Es automática. Una vez que solicitás la devolución dentro de los 7 días y la aprobamos, el sistema da de baja tu acceso en el momento. Vos solo pedís el reembolso; nosotros nos encargamos del resto, sin pasos extra ni checkboxes que llenar."
+      },
+      {
+        id: "faq-3",
+        question: "¿Es un pago único o me van a cobrar todos los meses?",
+        answer: "Es un pago único de $17.900 ARS. No es una suscripción — pagás una sola vez y tu acceso queda activo de por vida, sin cargos recurrentes ni sorpresas en la tarjeta."
+      },
+      {
+        id: "faq-4",
+        question: "¿Necesito saber cocinar o tener experiencia con apps para usarla?",
+        answer: "No, está pensada para cualquier persona. Cargás lo que tenés en tu heladera y la app te dice qué cocinar, te arma la lista del súper automáticamente y te avisa qué está por vencer. Todo con pasos simples, sin curva de aprendizaje."
+      }
+    ];
+
+    return (
+      <section className="bg-stone-50 text-stone-800 py-16 px-4 md:px-8 border-t border-stone-200/60" id="faq-seccion">
+        <div className="max-w-2xl mx-auto space-y-8">
+          <div className="text-center space-y-2">
+            <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-100">
+              <HelpCircle className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Preguntas Frecuentes</span>
+            </span>
+            <h2 className="text-2xl md:text-3xl font-serif font-black text-stone-900 tracking-tight leading-tight">
+              Preguntas Frecuentes
+            </h2>
+            <p className="text-stone-600 text-xs md:text-sm max-w-lg mx-auto leading-relaxed">
+              Resolvé tus dudas al instante y descubrí por qué Heladera Inteligente es ideal para vos.
+            </p>
+          </div>
+
+          <div className="space-y-3.5">
+            {faqItems.map((item) => {
+              const isOpen = openFaq === item.id;
+              return (
+                <div 
+                  key={item.id} 
+                  id={item.id}
+                  className="bg-white border border-stone-200/80 rounded-2xl overflow-hidden transition-all duration-300 hover:border-emerald-500/30 hover:shadow-sm"
+                >
+                  <button
+                    onClick={() => toggleFaq(item.id)}
+                    className="w-full text-left p-5 flex justify-between items-center gap-4 cursor-pointer focus:outline-none"
+                  >
+                    <span className="font-serif font-bold text-stone-900 text-sm md:text-base leading-snug">
+                      {item.question}
+                    </span>
+                    <span className={`w-6 h-6 rounded-full bg-stone-100 flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 bg-emerald-50 text-emerald-600" : "text-stone-500"}`}>
+                      <ChevronDown className="w-4 h-4" />
+                    </span>
+                  </button>
+
+                  <div 
+                    className={`transition-all duration-350 ease-in-out overflow-hidden ${isOpen ? "max-h-72 opacity-100 border-t border-stone-100" : "max-h-0 opacity-0"}`}
+                  >
+                    <div className="p-5 text-stone-600 text-xs md:text-sm leading-relaxed bg-stone-50/40">
+                      {item.answer}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    );
+  }, [openFaq]);
+
   const footerSection = useMemo(() => (
     <footer className="bg-stone-950 text-stone-350 py-10 px-4 border-t border-stone-900 text-xs text-center">
       <div className="max-w-4xl mx-auto space-y-3">
@@ -543,6 +641,8 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
       {testimonialsMarquee}
 
       {pricingSection}
+
+      {faqSection}
 
       {footerSection}
     </>

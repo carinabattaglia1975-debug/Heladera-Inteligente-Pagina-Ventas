@@ -185,16 +185,28 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
   ), []);
 
   const heroSection = useMemo(() => (
-    <div className="max-w-xl mx-auto overflow-hidden rounded-2xl border border-stone-200/80 shadow-md bg-stone-100/50">
-      <img 
-        src="https://i.postimg.cc/qqpTHHwG/Chat-GPT-Image-3-jun-2026-19-49-16.webp" 
-        alt="Heladera Inteligente App Preview" 
-        width={576}
-        height={432}
-        className="w-full h-auto object-cover block"
-        referrerPolicy="no-referrer"
-        loading="eager"
-        {...({ fetchPriority: "high" } as any)}
+    <div className="w-full max-w-[290px] sm:max-w-[330px] mx-auto overflow-hidden rounded-[2.5rem] border-[9px] border-stone-900 shadow-2xl bg-stone-950 relative aspect-[9/16] ring-8 ring-stone-950/5 hover:scale-[1.02] hover:shadow-emerald-900/5 transition-all duration-300">
+      {/* Smartphone Notch / Dynamic Island Detail */}
+      <div className="absolute top-0 inset-x-0 h-7 flex justify-center items-start pt-1.5 z-10 select-none pointer-events-none">
+        <div className="w-20 h-3.5 bg-stone-900 rounded-full flex items-center justify-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-stone-800" />
+          <div className="w-6 h-0.75 bg-stone-850 rounded-full" />
+        </div>
+      </div>
+
+      {/* Screen Glare Reflection Sheen */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none z-10" />
+
+      {/* Video element */}
+      <video
+        src="/video.mp4"
+        className="w-full h-full object-cover block"
+        controls
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="https://i.postimg.cc/qqpTHHwG/Chat-GPT-Image-3-jun-2026-19-49-16.webp"
       />
     </div>
   ), []);
