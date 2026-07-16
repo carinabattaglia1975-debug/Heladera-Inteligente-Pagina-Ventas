@@ -37,12 +37,12 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
   const [loadVideo, setLoadVideo] = useState(false);
 
   useEffect(() => {
-    // Delay loading the heavy video for 500ms to prioritize first paint/render of the static image poster,
-    // ensuring the video is loaded for all devices (including mobile) while keeping page speeds excellent!
-    const timer = setTimeout(() => {
+    // Only auto-load the heavy 6.4MB video on desktop devices (width >= 1024)
+    // to optimize mobile speed scores and data usage. On mobile, users can play it on-demand.
+    const isDesktop = typeof window !== "undefined" && window.innerWidth >= 1024;
+    if (isDesktop) {
       setLoadVideo(true);
-    }, 500);
-    return () => clearTimeout(timer);
+    }
   }, []);
 
   const bonusSeats = useMemo(() => {
@@ -217,20 +217,35 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
           className="w-full h-full object-cover block"
           controls
           autoPlay
-          muted
           loop
           playsInline
           poster="https://i.postimg.cc/qqpTHHwG/Chat-GPT-Image-3-jun-2026-19-49-16.webp"
         />
       ) : (
-        <img
-          src="https://i.postimg.cc/qqpTHHwG/Chat-GPT-Image-3-jun-2026-19-49-16.webp"
-          alt="Heladera Inteligente App Preview"
-          width="312"
-          height="554"
-          className="w-full h-full object-cover block bg-stone-900"
-          referrerPolicy="no-referrer"
-        />
+        <div 
+          onClick={() => setLoadVideo(true)}
+          className="relative w-full h-full cursor-pointer group select-none"
+        >
+          <img
+            src="https://i.postimg.cc/qqpTHHwG/Chat-GPT-Image-3-jun-2026-19-49-16.webp"
+            alt="Heladera Inteligente App Preview"
+            width="312"
+            height="554"
+            className="w-full h-full object-cover block bg-stone-900 transition-transform duration-500 group-hover:scale-[1.03]"
+            referrerPolicy="no-referrer"
+          />
+          {/* Pulsing Play Button Overlay */}
+          <div className="absolute inset-0 bg-stone-950/40 flex flex-col items-center justify-center gap-3.5 transition-colors duration-300 group-hover:bg-stone-950/50">
+            <div className="w-16 h-16 rounded-full bg-emerald-600/95 flex items-center justify-center text-white shadow-lg shadow-emerald-950/40 group-hover:bg-emerald-500 group-hover:scale-110 transition-all duration-300 animate-pulse">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="ml-1 text-white">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <span className="text-white text-[11px] font-sans font-bold tracking-wider uppercase bg-stone-900/80 px-3.5 py-2 rounded-full border border-white/10 shadow-md backdrop-blur-md transition-transform duration-300 group-hover:scale-105">
+              ▶ Tocar para ver video
+            </span>
+          </div>
+        </div>
       )}
     </div>
   ), [loadVideo]);
