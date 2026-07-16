@@ -27,10 +27,17 @@
            src="https://www.facebook.com/tr?id=2065971250795796&ev=PageView&noscript=1"/>
     </noscript>
     <div id="root">
-      <div class="min-h-screen bg-[#fcfbfa] text-stone-800 font-sans">
+      <div class="min-h-screen bg-[#fcfbfa] text-stone-800 font-sans selection:bg-emerald-100 selection:text-emerald-900 overflow-x-hidden">
         <!-- 1) TOP TICKER BAR static shell -->
-        <div class="w-full bg-[#1b3d2b] text-emerald-100 py-2.5 text-[11px] font-sans font-medium tracking-wide text-center border-b border-emerald-900/10">
-          <span class="uppercase">🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA</span>
+        <div class="relative w-full overflow-hidden bg-[#1b3d2b] text-emerald-100 py-2.5 text-[11px] font-sans font-medium tracking-wide z-50 border-b border-emerald-900/10">
+          <div class="flex whitespace-nowrap min-w-full">
+            <div class="flex shrink-0 items-center justify-around gap-6 min-w-full animate-marquee uppercase">
+              <span>🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA • 🔥 ACCESO DE POR VIDA PARA LOS PRIMEROS 200 • 🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA •</span>
+            </div>
+            <div class="flex shrink-0 items-center justify-around gap-6 min-w-full animate-marquee uppercase" aria-hidden="true">
+              <span>🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA • 🔥 ACCESO DE POR VIDA PARA LOS PRIMEROS 200 • 🔒 PAGO 100% SEGURO CON MERCADO PAGO • 🚀 OFERTA DE LANZAMIENTO LIMITADA •</span>
+            </div>
+          </div>
         </div>
 
         <!-- 2) HEADER static shell -->
@@ -39,56 +46,77 @@
             <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center font-serif font-black text-white text-base shadow-sm shrink-0">
               ❄️
             </div>
-            <div class="flex flex-col text-left font-serif">
+            <div class="flex flex-col text-left">
               <span class="font-serif font-bold text-stone-900 tracking-tight text-base leading-none">
                 Heladera Inteligente™
               </span>
               <span class="text-[10px] text-stone-800 font-semibold font-sans tracking-wide">Planificá tus Comidas</span>
             </div>
           </div>
-          <button class="bg-[#2c5e43] text-stone-50 border-none text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-xl shadow-sm">
-            Acceder
+          <nav class="hidden md:flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-stone-800">
+            <a href="#sales-page" class="hover:text-stone-900 transition-colors">Beneficios</a>
+            <a href="#oferta-cierre" class="hover:text-stone-900 transition-colors">Ver Oferta</a>
+          </nav>
+          <button class="cursor-pointer bg-[#2c5e43] text-stone-50 border-none text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-xl flex items-center gap-1.5 transition-all shadow-sm active:scale-95">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Acceder</span>
           </button>
         </header>
 
-        <!-- 3) HERO SECTION static shell (minimizes LCP & FCP delay to milliseconds) -->
-        <div class="max-w-3xl mx-auto px-4 py-8 space-y-8 text-center" id="sales-page">
-          <div class="text-center space-y-4">
-            <span class="text-xs font-bold tracking-widest text-[#1b3d2b] uppercase bg-emerald-100 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5 shadow-xs">
-              <span>Resultado del Test</span>
-            </span>
-            <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-950 tracking-tight leading-tight max-w-2xl mx-auto">
-              El test no miente: Cada mes se te va más plata de la que imaginás en alimentos que no llegás a consumir. Frená el desperdicio hoy!
-            </h2>
-            <p class="text-stone-850 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-              Ya viste a dónde se va tu plata. Es momento de automatizar tus cenas, usar lo que ya tenés en casa y cocinar rico en segundos, sin descargar nada.
-            </p>
-          </div>
-
-          <div class="w-full max-w-[290px] sm:max-w-[330px] mx-auto overflow-hidden rounded-[2.5rem] border-[9px] border-stone-900 shadow-2xl bg-stone-950 relative aspect-[9/16] ring-8 ring-stone-950/5">
-            <!-- Smartphone Notch / Dynamic Island Detail -->
-            <div class="absolute top-0 inset-x-0 h-7 flex justify-center items-start pt-1.5 z-10 select-none pointer-events-none">
-              <div class="w-20 h-3.5 bg-stone-900 rounded-full flex items-center justify-center gap-1.5">
-                <div class="w-1.5 h-1.5 rounded-full bg-stone-800"></div>
-                <div class="w-6 h-0.75 bg-stone-850 rounded-full"></div>
+        <!-- 3) MAIN SALES PAGE CONTAINER static shell -->
+        <main id="main-content">
+          <div class="w-full bg-stone-50 text-stone-800 font-sans" id="sales-page">
+            <section class="py-12 px-4 md:px-8 max-w-3xl mx-auto space-y-12">
+              <div class="text-center space-y-4">
+                <span class="text-xs font-bold tracking-widest text-[#1b3d2b] uppercase bg-emerald-100 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5 shadow-xs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-emerald-700 fill-emerald-700 animate-pulse"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5Z"/><path d="m19 17 1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1Z"/></svg>
+                  <span>Resultado del Test</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-950 tracking-tight leading-tight max-w-2xl mx-auto">
+                  ¡Excelente! Ya sabés cuánto dinero podrías ahorrar cada mes.
+                </h2>
+                <p class="text-stone-850 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+                  Ahora descubrí cómo Heladera Inteligente hace posible ese ahorro y todo lo que recibís hoy con tu acceso de por vida.
+                </p>
               </div>
-            </div>
 
-            <!-- Screen Glare Reflection Sheen -->
-            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none z-10"></div>
+              <div class="w-full max-w-[290px] sm:max-w-[330px] mx-auto overflow-hidden rounded-[2.5rem] border-[9px] border-stone-900 shadow-2xl bg-stone-950 relative aspect-[9/16] ring-8 ring-stone-950/5">
+                <!-- Smartphone Notch / Dynamic Island Detail -->
+                <div class="absolute top-0 inset-x-0 h-7 flex justify-center items-start pt-1.5 z-10 select-none pointer-events-none">
+                  <div class="w-20 h-3.5 bg-stone-900 rounded-full flex items-center justify-center gap-1.5">
+                    <div class="w-1.5 h-1.5 rounded-full bg-stone-800"></div>
+                    <div class="w-6 h-0.75 bg-stone-850 rounded-full"></div>
+                  </div>
+                </div>
 
-            <img 
-              src="https://i.postimg.cc/qqpTHHwG/Chat-GPT-Image-3-jun-2026-19-49-16.webp" 
-              alt="Heladera Inteligente App Preview" 
-              width="312"
-              height="554"
-              class="w-full h-full object-cover block bg-stone-900"
-              referrerpolicy="no-referrer"
-              loading="eager"
-              fetchpriority="high"
-            />
+                <!-- Screen Glare Reflection Sheen -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none z-10"></div>
+
+                <img 
+                  src="https://i.postimg.cc/qqpTHHwG/Chat-GPT-Image-3-jun-2026-19-49-16.webp" 
+                  alt="Heladera Inteligente App Preview" 
+                  width="312"
+                  height="554"
+                  class="w-full h-full object-cover block bg-stone-900"
+                  referrerpolicy="no-referrer"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              </div>
+
+              <!-- Upper CTA Button -->
+              <div class="max-w-md mx-auto text-center pt-2 pb-1 px-2">
+                <button class="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-700 text-stone-50 border-none px-6 py-4 rounded-xl font-serif font-black text-md md:text-lg tracking-wide shadow-md flex items-center justify-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  <span>QUIERO MI ACCESO + LOS BONOS</span>
+                </button>
+                <p class="text-xs text-stone-900 font-mono font-semibold mt-2.5 leading-normal">
+                  Único pago de $17.900 ARS • Acceso de por vida
+                </p>
+              </div>
+            </section>
           </div>
-        </div>
+        </main>
       </div>
     </div>
     <script type="module" defer crossorigin src="/src/main.tsx"></script>

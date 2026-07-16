@@ -34,6 +34,16 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
     return 48;
   });
 
+  const [loadVideo, setLoadVideo] = useState(false);
+
+  useEffect(() => {
+    // Delay loading the heavy 6.4MB video for 1.2s to prioritize script execution and first render paint
+    const timer = setTimeout(() => {
+      setLoadVideo(true);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
   const bonusSeats = useMemo(() => {
     return 200 - purchasedCount;
   }, [purchasedCount]);
@@ -197,19 +207,30 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
       {/* Screen Glare Reflection Sheen */}
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none z-10" />
 
-      {/* Video element */}
-      <video
-        src="/video.mp4?v=2"
-        className="w-full h-full object-cover block"
-        controls
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="https://i.postimg.cc/qqpTHHwG/Chat-GPT-Image-3-jun-2026-19-49-16.webp"
-      />
+      {/* Conditional Video / Image preloader */}
+      {loadVideo ? (
+        <video
+          src="/video.mp4?v=2"
+          className="w-full h-full object-cover block"
+          controls
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="https://i.postimg.cc/qqpTHHwG/Chat-GPT-Image-3-jun-2026-19-49-16.webp"
+        />
+      ) : (
+        <img
+          src="https://i.postimg.cc/qqpTHHwG/Chat-GPT-Image-3-jun-2026-19-49-16.webp"
+          alt="Heladera Inteligente App Preview"
+          width="312"
+          height="554"
+          className="w-full h-full object-cover block bg-stone-900"
+          referrerPolicy="no-referrer"
+        />
+      )}
     </div>
-  ), []);
+  ), [loadVideo]);
 
   const upperCtaButton = useMemo(() => (
     <div className="max-w-md mx-auto text-center pt-2 pb-1 px-2">
