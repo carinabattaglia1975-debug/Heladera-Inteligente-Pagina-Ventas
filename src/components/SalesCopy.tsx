@@ -199,7 +199,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
 
       {/* Video element */}
       <video
-        src="/video.mp4"
+        src="/video.mp4?v=2"
         className="w-full h-full object-cover block"
         controls
         autoPlay
