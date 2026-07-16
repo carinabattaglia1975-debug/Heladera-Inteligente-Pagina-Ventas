@@ -186,26 +186,26 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
           Buscá recetas y accedé directo a tus sitios favoritos sin salir de la app
         </h4>
       </div>
-      <p className="text-stone-700 text-xs sm:text-sm leading-relaxed">
+      <p className="text-stone-850 text-xs sm:text-sm leading-relaxed">
         ¿Querés buscar una receta específica o ver variantes locales? Desde nuestra plataforma, el Asistente te conecta con un solo clic con las principales fuentes culinarias de la Argentina. Buscá tus preparaciones favoritas y accedé directamente a:
       </p>
       
       <div className="grid grid-cols-3 gap-3 pt-1">
         <div className="bg-white p-3 rounded-2xl border border-stone-200 text-center space-y-1 shadow-2xs">
           <p className="text-xs font-bold font-serif text-[#f27a1a]">Cookpad</p>
-          <p className="text-[10px] text-stone-700 font-medium">Comunidad y tips</p>
+          <p className="text-[11px] text-stone-850 font-bold">Comunidad y tips</p>
         </div>
         <div className="bg-white p-3 rounded-2xl border border-stone-200 text-center space-y-1 shadow-2xs">
           <p className="text-xs font-bold font-serif text-[#d92a1c]">Cocineros Arg</p>
-          <p className="text-[10px] text-stone-700 font-medium">Clásicos locales</p>
+          <p className="text-[11px] text-stone-850 font-bold">Clásicos locales</p>
         </div>
         <div className="bg-white p-3 rounded-2xl border border-stone-200 text-center space-y-1 shadow-2xs">
           <p className="text-xs font-bold font-serif text-[#f12c66]">Paulina Cocina</p>
-          <p className="text-[10px] text-stone-700 font-medium">Fácil y rápido</p>
+          <p className="text-[11px] text-stone-850 font-bold">Fácil y rápido</p>
         </div>
       </div>
       
-      <p className="text-[10px] text-stone-700 italic text-center leading-normal font-medium">
+      <p className="text-[11px] text-stone-900 italic text-center leading-normal font-semibold">
         *Integración optimizada para encontrar ideas rápidas adaptadas a los ingredientes reales de tu heladera.
       </p>
     </div>
@@ -235,8 +235,8 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
               Bono 1: Manual de Instrucciones Paso a Paso (PDF)
             </p>
           </div>
-          <p className="text-stone-700 text-xs leading-relaxed">
-            Un instructivo completo para el <strong className="font-bold text-stone-900">Asistente de Cocina Inteligente</strong> con capturas de la aplicación real, diseñado para optimizar tus platos, ahorrar tiempo y dinero, y llevar una alimentación sumamente saludable sin desperdiciar nada.
+          <p className="text-stone-850 text-xs leading-relaxed">
+            Un instructivo completo para el <strong className="font-bold text-stone-900">Asistente de Cocina Inteligente</strong> con capturas de la aplicación real, diseñado para optimizar tus platos, ahorrar tiempo and dinero, y llevar una alimentación sumamente saludable sin desperdiciar nada.
           </p>
           <div className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest bg-emerald-100/60 px-2 py-0.5 rounded inline-block">
             🎁 GRATIS al comprar hoy
@@ -251,7 +251,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
               Bono 2: Recetario Desinflamatorio Express (PDF)
             </p>
           </div>
-          <p className="text-stone-700 text-xs leading-relaxed">
+          <p className="text-stone-850 text-xs leading-relaxed">
             Platos ultra rápidos y deliciosos sin gluten ni lácteos para depurar tu cuerpo, deshincharte y optimizar tu digestión en menos de 15 minutos. Te lo llevás gratis únicamente comprando hoy.
           </p>
           <div className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest bg-[#d1fae5] text-[#065f46] px-2 py-0.5 rounded inline-block">
@@ -287,7 +287,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent w-1/3 h-full animate-shimmer pointer-events-none" />
         </div>
 
-        <div className="flex justify-between items-center text-[10px] text-stone-700 font-mono pt-0.5">
+        <div className="flex justify-between items-center text-[11px] text-stone-900 font-mono pt-0.5 font-bold">
           <span className="font-bold text-emerald-700">{Math.round(((200 - bonusSeats) / 200) * 100)}% Reservado</span>
           <span className="animate-pulse text-emerald-600 font-bold flex items-center gap-1">
             ● {activeViewers} personas mirando esta oferta ahora
@@ -306,7 +306,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
         <h4 className="font-serif font-black text-stone-950 text-lg sm:text-xl tracking-tight leading-snug">
           Guía Paso a Paso para una Experiencia Exitosa
         </h4>
-        <p className="text-xs text-stone-600 leading-relaxed">
+        <p className="text-xs text-stone-850 leading-relaxed font-semibold">
           Para sacarle el 100% de provecho a la aplicación y disfrutar de todos sus beneficios, este es el camino ideal:
         </p>
       </div>
@@ -319,8 +319,8 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
           </span>
           <div className="space-y-1">
             <p className="font-serif font-black text-stone-900 text-xs sm:text-sm">Configurá el Perfil de tu Hogar</p>
-            <p className="text-stone-700 text-xs leading-relaxed">
-              Antes de empezar, indicá tus opciones de <strong className="font-bold">Salud, Alergias y Dietas</strong> en el panel de configuración. De esta forma, cada receta que genere la IA estará perfectamente filtrada. Si hay un celíaco en la casa, todas las harinas sugeridas serán <span className="text-emerald-800 font-bold">Sin TACC</span>; si hay alguien con hipertensión, el asistente adaptará las instrucciones para cocinar sin sal común.
+            <p className="text-stone-850 text-xs leading-relaxed">
+              Cada vez que generes tu plan, indicá tus preferencias del momento — salud, alergias, antojos del día, cantidad de comensales. Nada queda guardado como fijo: elegís de nuevo según lo que necesites hoy. Si hay un celíaco en casa, todas las harinas sugeridas serán <span className="text-emerald-800 font-bold">Sin TACC</span>; si hay alguien con hipertensión, el asistente adaptará las instrucciones para cocinar sin sal común.
             </p>
           </div>
         </div>
@@ -332,8 +332,8 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
           </span>
           <div className="space-y-1">
             <p className="font-serif font-black text-stone-900 text-xs sm:text-sm">Pasá Limpio tu Inventario (Tu Heladera)</p>
-            <p className="text-stone-700 text-xs leading-relaxed">
-              Ingresá al gestor de inventario y anotá qué ingredientes tenés disponibles (ej: pollo, cebolla, arroz, huevos) con sus cantidades y estimación de vencimiento. Si tenés un producto que vence pronto, activá la casilla <strong className="text-amber-700 font-bold">Urgente ⚠️</strong>. La IA le dará prioridad absoluta en la planificación para evitar que se eche a perder.
+            <p className="text-stone-850 text-xs leading-relaxed">
+              Ingresá al gestor de inventario y anotá qué ingredientes tenés disponibles (ej: pollo, cebolla, arroz, huevos) con sus cantidades y estimación de vencimiento. Si tenés un producto que vence pronto, activá la casilla <strong className="text-amber-900 font-bold">Urgente ⚠️</strong>. La IA le dará prioridad absoluta en la planificación para evitar que se eche a perder.
             </p>
           </div>
         </div>
@@ -345,7 +345,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
           </span>
           <div className="space-y-1">
             <p className="font-serif font-black text-stone-900 text-xs sm:text-sm">Generá tu Plan de Cocina Inteligente</p>
-            <p className="text-stone-700 text-xs leading-relaxed">
+            <p className="text-stone-850 text-xs leading-relaxed">
               Con tu heladera cargada y tus filtros de salud listos, presioná el botón para generar el Plan de Cocina. La IA analizará tus ingredientes con precisión quirúrgica y te sugerirá un menú completo detallándote qué platos podés cocinar de inmediato y para cuáles te faltan detalles mínimos.
             </p>
           </div>
@@ -358,7 +358,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
           </span>
           <div className="space-y-1">
             <p className="font-serif font-black text-stone-900 text-xs sm:text-sm">Cocinar de Forma Interactiva</p>
-            <p className="text-stone-700 text-xs leading-relaxed">
+            <p className="text-stone-850 text-xs leading-relaxed">
               Al abrir una receta sugerida, disponés del <strong className="font-bold">Paso a Paso Interactivo</strong> para ir tachando tareas a medida que avanzás. Y si querés ver variantes o secretos de otros cocineros, disponés del botón <strong className="text-emerald-800 font-bold">"Tip Cookpad"</strong> para buscar al instante opiniones en la comunidad.
             </p>
           </div>
@@ -371,33 +371,22 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
           </span>
           <div className="space-y-1">
             <p className="font-serif font-black text-stone-900 text-xs sm:text-sm">Armá la Lista de Compras y Compartí</p>
-            <p className="text-stone-700 text-xs leading-relaxed">
+            <p className="text-stone-850 text-xs leading-relaxed">
               Agregá productos cotidianos con un click (como yerba o aceite) usando los atajos rápidos. Copiá la lista completa y mandala por WhatsApp al encargado de hacer las compras, con casilleros listos para ir tachando. ¡Y listos para disfrutar de una comida casera y organizada!
             </p>
           </div>
         </div>
       </div>
 
-      <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl flex flex-col gap-3">
+      <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl">
         <div className="flex items-start gap-2.5">
           <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5 text-[#1b3d2b] font-bold text-xs">
             💡
           </div>
           <div>
             <p className="text-[#1b3d2b] font-bold text-xs">Consejo Pro para el Éxito Continuo</p>
-            <p className="text-stone-700 text-[11px] leading-relaxed">
+            <p className="text-stone-850 text-[11.5px] leading-relaxed font-semibold">
               Mantené tu inventario actualizado. Cada vez que cocines un plato o hagas una compra grande, dedica un minuto a ajustar las cantidades en el panel de inventario. Esto hará que las futuras sugerencias de la IA sean increíblemente precisas y eficientes.
-            </p>
-          </div>
-        </div>
-        <div className="border-t border-emerald-200/60 pt-2.5 flex items-start gap-2.5">
-          <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5 text-[#1b3d2b] font-bold text-xs">
-            ✨
-          </div>
-          <div>
-            <p className="text-[#1b3d2b] font-bold text-xs">Personalización Dinámica</p>
-            <p className="text-stone-700 text-[11px] leading-relaxed">
-              Cada vez que generes tu plan, indicá tus preferencias del momento — salud, alergias, antojos del día, cantidad de comensales. Nada queda guardado como fijo: elegís de nuevo según lo que necesites hoy.
             </p>
           </div>
         </div>
@@ -427,9 +416,9 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
 
   const testimonialsMarquee = useMemo(() => (
     <div className="space-y-4 w-full overflow-hidden py-4 max-w-xl mx-auto">
-      <div className="flex items-center gap-2 text-stone-700 justify-center">
+      <div className="flex items-center gap-2 text-stone-850 justify-center">
         <MessageSquare className="w-4 h-4 text-emerald-600" />
-        <h4 className="text-[10px] uppercase font-mono font-bold tracking-widest text-stone-700">Testimonios reales (Mantené presionado para pausar)</h4>
+        <h4 className="text-[10.5px] uppercase font-mono font-bold tracking-widest text-stone-900">Testimonios reales (Mantené presionado para pausar)</h4>
       </div>
 
       <div className="relative w-full overflow-hidden">
@@ -439,18 +428,18 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
         <div className="flex w-max gap-4 animate-marquee py-2 hover:[animation-play-state:paused] active:[animation-play-state:paused]">
           {TESTIMONIALS.map((t, idx) => (
             <div key={`t1-${idx}`} className="w-[280px] sm:w-[300px] shrink-0 bg-white p-4 rounded-xl border border-stone-200/80 shadow-2xs">
-              <p className="text-xs text-stone-700 italic leading-relaxed">
+              <p className="text-xs text-stone-850 italic leading-relaxed">
                 &ldquo;{t.text}&rdquo;
               </p>
-              <p className="text-[10px] font-bold text-stone-900 mt-2 font-mono uppercase tracking-wide">— {t.author}, {t.city}</p>
+              <p className="text-[11px] font-bold text-stone-950 mt-2 font-mono uppercase tracking-wide">— {t.author}, {t.city}</p>
             </div>
           ))}
           {TESTIMONIALS.map((t, idx) => (
             <div key={`t2-${idx}`} className="w-[280px] sm:w-[300px] shrink-0 bg-white p-4 rounded-xl border border-stone-200/80 shadow-2xs">
-              <p className="text-xs text-stone-700 italic leading-relaxed">
+              <p className="text-xs text-stone-850 italic leading-relaxed">
                 &ldquo;{t.text}&rdquo;
               </p>
-              <p className="text-[10px] font-bold text-stone-900 mt-2 font-mono uppercase tracking-wide">— {t.author}, {t.city}</p>
+              <p className="text-[11px] font-bold text-stone-950 mt-2 font-mono uppercase tracking-wide">— {t.author}, {t.city}</p>
             </div>
           ))}
         </div>
@@ -482,11 +471,11 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
 
           <div className="space-y-4">
             <div className="py-2 text-center">
-              <span className="text-[10px] text-stone-400 uppercase tracking-widest font-bold block mb-1">UN SOLO PAGO DE LANZAMIENTO:</span>
+              <span className="text-[11px] text-emerald-300 uppercase tracking-widest font-black block mb-1">UN SOLO PAGO DE LANZAMIENTO:</span>
               <h3 className="text-5xl md:text-6xl font-serif font-black text-emerald-400 tracking-tight leading-none drop-shadow-[0_4px_12px_rgba(52,211,153,0.18)]">
                 $17.900 ARS
               </h3>
-              <span className="text-[10px] text-emerald-500 font-bold tracking-wider block mt-1">SIN CUOTAS NI MENSUALIDADES HOY</span>
+              <span className="text-[11px] text-emerald-400 font-extrabold tracking-wider block mt-1">SIN CUOTAS NI MENSUALIDADES HOY</span>
             </div>
             
             <div className="bg-emerald-950/40 border border-emerald-500/20 rounded-2xl p-3.5 text-left space-y-2">
@@ -573,7 +562,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
             <h2 className="text-2xl md:text-3xl font-serif font-black text-stone-900 tracking-tight leading-tight">
               Preguntas Frecuentes
             </h2>
-            <p className="text-stone-600 text-xs md:text-sm max-w-lg mx-auto leading-relaxed">
+            <p className="text-stone-850 text-xs md:text-sm max-w-lg mx-auto leading-relaxed font-semibold">
               Resolvé tus dudas al instante y descubrí por qué Heladera Inteligente es ideal para vos.
             </p>
           </div>
@@ -594,7 +583,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
                     <span className="font-serif font-bold text-stone-900 text-sm md:text-base leading-snug">
                       {item.question}
                     </span>
-                    <span className={`w-6 h-6 rounded-full bg-stone-100 flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 bg-emerald-50 text-emerald-600" : "text-stone-500"}`}>
+                    <span className={`w-6 h-6 rounded-full bg-stone-100 flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 bg-emerald-50 text-emerald-600" : "text-stone-750"}`}>
                       <ChevronDown className="w-4 h-4" />
                     </span>
                   </button>
@@ -602,7 +591,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
                   <div 
                     className={`transition-all duration-350 ease-in-out overflow-hidden ${isOpen ? "max-h-72 opacity-100 border-t border-stone-100" : "max-h-0 opacity-0"}`}
                   >
-                    <div className="p-5 text-stone-600 text-xs md:text-sm leading-relaxed bg-stone-50/40">
+                    <div className="p-5 text-stone-850 text-xs md:text-sm leading-relaxed bg-stone-50/40 font-semibold">
                       {item.answer}
                     </div>
                   </div>
@@ -616,10 +605,10 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
   }, [openFaq]);
 
   const footerSection = useMemo(() => (
-    <footer className="bg-stone-950 text-stone-350 py-10 px-4 border-t border-stone-900 text-xs text-center">
+    <footer className="bg-stone-950 text-stone-300 py-10 px-4 border-t border-stone-900 text-xs text-center">
       <div className="max-w-4xl mx-auto space-y-3">
         <p className="font-serif text-stone-200">Heladera Inteligente™ - Todos los derechos reservados © {new Date().getFullYear()}</p>
-        <p className="max-w-2xl mx-auto text-stone-400 text-[10px] leading-relaxed">
+        <p className="max-w-2xl mx-auto text-stone-300 text-[10.5px] leading-relaxed">
           Este sitio web no forma parte de Facebook, Instagram ni Meta Platforms, Inc. Todos los nombres de productos y marcas son propiedad de sus respectivos owners. Aureva Studio SAS. Soporte directo: aurevastudio2@gmail.com
         </p>
       </div>

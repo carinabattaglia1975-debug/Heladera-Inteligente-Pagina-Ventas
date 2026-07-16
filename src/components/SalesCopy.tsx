@@ -178,7 +178,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
       <h2 className="text-2xl sm:text-3xl font-serif font-black text-stone-950 tracking-tight leading-tight max-w-2xl mx-auto">
         ¡Excelente! Ya sabés cuánto dinero podrías ahorrar cada mes.
       </h2>
-      <p className="text-stone-700 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+      <p className="text-stone-850 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
         Ahora descubrí cómo Heladera Inteligente hace posible ese ahorro y todo lo que recibís hoy con tu acceso de por vida.
       </p>
     </div>
@@ -220,7 +220,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         <ShoppingBag className="w-5 h-5 text-white shrink-0" />
         <span>QUIERO MI ACCESO + LOS BONOS</span>
       </button>
-      <p className="text-[10px] text-stone-700 font-mono mt-1.5 leading-normal">
+      <p className="text-xs text-stone-900 font-mono font-semibold mt-2.5 leading-normal">
         Único pago de $17.900 ARS • Acceso de por vida
       </p>
     </div>
