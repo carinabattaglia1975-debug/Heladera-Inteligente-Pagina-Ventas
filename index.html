@@ -50,7 +50,7 @@
             window.addEventListener('click', loadClarity);
             
             // Safe fallback to ensure it loads even if no immediate interaction happens
-            setTimeout(loadClarity, 4000);
+            setTimeout(loadClarity, 10000);
         })(window, document, "clarity", "script", "xomgmtpz4y");
     </script>
   </head>
@@ -177,7 +177,7 @@
       }
 
       // Initialize on first user interaction or fallback timeout to ensure analytical accuracy without initial render CPU blocking
-      var pixelTimer = setTimeout(initFacebookPixel, 2500);
+      var pixelTimer = setTimeout(initFacebookPixel, 10000);
       function loadPixelOnInteraction() {
         initFacebookPixel();
         clearTimeout(pixelTimer);

@@ -275,7 +275,7 @@ async function startServer() {
           res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
           res.setHeader("Pragma", "no-cache");
           res.setHeader("Expires", "0");
-        } else if (filePath.includes("/assets/") || filePath.match(/\.[a-f0-9]{8,10}\.(js|css)$/)) {
+        } else if (filePath.includes("assets") || filePath.match(/[\\/]assets[\\/]/) || filePath.match(/\.[a-zA-Z0-9_-]{8,12}\.(js|css)$/)) {
           // If the asset is in /assets/ or features a content-hash in the filename, cache it forever (1 year)
           res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
         } else if (filePath.match(/\.(webp|png|jpg|jpeg|gif|svg|ico)$/i)) {
