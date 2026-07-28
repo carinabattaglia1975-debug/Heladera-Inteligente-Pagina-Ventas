@@ -186,11 +186,11 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         <Sparkles className="w-3.5 h-3.5 text-emerald-700 animate-pulse fill-emerald-700" />
         <span>Resultado del Test</span>
       </span>
-      <h2 className="text-2xl sm:text-3xl font-serif font-black text-stone-950 tracking-tight leading-tight max-w-2xl mx-auto">
-        ¡Excelente! Ya sabés cuánto dinero podrías ahorrar cada mes.
+      <h2 className="text-xl sm:text-3xl font-serif font-black text-stone-950 tracking-tight leading-tight max-w-2xl mx-auto">
+        ¡Listo! Ya no vas a preguntarte más qué cocinar — y de paso, mirá cuánto podrías ahorrar cada mes.
       </h2>
       <p className="text-stone-850 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-        Ahora descubrí cómo Heladera Inteligente hace posible ese ahorro y todo lo que recibís hoy con tu acceso de por vida.
+        Descubrí cómo Heladera Inteligente resuelve tus comidas del día a día y todo lo que recibís hoy con tu acceso de por vida.
       </p>
     </div>
   ), []);
