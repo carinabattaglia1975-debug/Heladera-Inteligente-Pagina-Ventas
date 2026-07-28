@@ -187,7 +187,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         <span>Resultado del Test</span>
       </span>
       <h2 className="text-xl sm:text-3xl font-serif font-black text-stone-950 tracking-tight leading-tight max-w-2xl mx-auto">
-        ¡Listo! Ya no vas a preguntarte más qué cocinar — y de paso, mirá cuánto podrías ahorrar cada mes.
+        Esto es todo lo que necesitás para dejar de pensar qué cocinar, hoy.
       </h2>
       <p className="text-stone-850 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
         Descubrí cómo Heladera Inteligente resuelve tus comidas del día a día y todo lo que recibís hoy con tu acceso de por vida.
