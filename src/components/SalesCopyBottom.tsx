@@ -214,41 +214,25 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
   const bonusCard = useMemo(() => (
     <div className="bg-gradient-to-br from-emerald-50 to-stone-50 border-2 border-emerald-500/30 p-6 sm:p-8 rounded-3xl max-w-xl mx-auto space-y-5 shadow-lg relative overflow-hidden text-left">
       <div className="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-black tracking-widest uppercase px-3.5 py-1.5 rounded-bl-2xl shadow-sm">
-        PACK DE BONOS EXCLUSIVOS
+        BONO EXCLUSIVO
       </div>
 
       <div className="space-y-4 pt-2">
         <span className="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-800 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
           <Gift className="w-3.5 h-3.5 text-emerald-700" />
-          <span>¡2 Bonos de regalo 100% gratis hoy!</span>
+          <span>¡Bono Exclusivo 100% gratis hoy!</span>
         </span>
 
         <h4 className="font-serif font-black text-emerald-950 text-base sm:text-lg tracking-tight leading-snug">
-          Te llevás GRATIS estos recursos prácticos con tu acceso de hoy:
+          Te llevás GRATIS este recurso práctico con tu acceso de hoy:
         </h4>
-
-        {/* Bonus 1 */}
-        <div className="border border-stone-200 bg-white p-4 rounded-2xl space-y-2 shadow-xs">
-          <div className="flex items-center gap-2">
-            <span className="text-emerald-600 font-extrabold text-sm">📕</span>
-            <p className="text-stone-900 font-bold font-serif text-sm">
-              Bono 1: Manual de Instrucciones Paso a Paso (PDF)
-            </p>
-          </div>
-          <p className="text-stone-850 text-xs leading-relaxed">
-            Un instructivo completo para el <strong className="font-bold text-stone-900">Asistente de Cocina Inteligente</strong> con capturas de la aplicación real, diseñado para optimizar tus platos, ahorrar tiempo and dinero, y llevar una alimentación sumamente saludable sin desperdiciar nada.
-          </p>
-          <div className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest bg-emerald-100/60 px-2 py-0.5 rounded inline-block">
-            🎁 GRATIS al comprar hoy
-          </div>
-        </div>
 
         {/* Bonus 2 */}
         <div className="border border-stone-200 bg-white p-4 rounded-2xl space-y-2 shadow-xs">
           <div className="flex items-center gap-2">
             <span className="text-emerald-600 font-extrabold text-sm">🥗</span>
             <p className="text-stone-900 font-bold font-serif text-sm">
-              Bono 2: Recetario Desinflamatorio Express (PDF)
+              BONO EXCLUSIVO: Recetario Desinflamatorio Express (PDF)
             </p>
           </div>
           <p className="text-stone-850 text-xs leading-relaxed">
@@ -459,7 +443,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
             UN SOLO PAGO • ACCESO DE POR VIDA
           </span>
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white tracking-tight">
-            Llevate la App Premium hoy y frená el desperdicio
+            Llevate hoy la App Heladera Inteligente Premium y dejá de preguntarte qué cocinar cada día.
           </h2>
         </div>
 
@@ -537,7 +521,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
       {
         id: "faq-2",
         question: "¿Cómo funciona la cancelación si pido el reembolso?",
-        answer: "Es automática. Una vez que solicitás la devolución dentro de los 7 días y la aprobamos, el sistema da de baja tu acceso en el momento. Vos solo pedís el reembolso; nosotros nos encargamos del resto, sin pasos extra ni checkboxes que llenar."
+        answer: "Es automática. Una vez que solicitás la devolución dentro de los 7 días y la aprobamos, el sistema da de baja tu acceso en el momento. Vos solo pedís el reembolso; nosotros nos encargamos del resto."
       },
       {
         id: "faq-3",
