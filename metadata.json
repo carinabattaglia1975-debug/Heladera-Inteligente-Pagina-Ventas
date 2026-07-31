@@ -1,7 +1,6 @@
 {
-  "name":  Heladera Inteligente",
-  "description": "Heladera Inteligente™ es una plataforma digital diseñada para ayudarte a organizar tus alimentos, planificar comidas y reducir el desperdicio utilizando lo que ya tenés en casa.
-No requiere descarga y funciona desde cualquier dispositivo con acceso a internet.",
+  "name": "Heladera Inteligente",
+  "description": "Heladera Inteligente™ es una app web diseñada para ayudarte a organizar tus alimentos, planificar comidas y decidir qué cocinar en 30 segundos con lo que tenés en casa.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

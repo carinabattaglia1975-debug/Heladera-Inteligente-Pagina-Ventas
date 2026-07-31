@@ -232,7 +232,7 @@ export const FridgeApp: React.FC<FridgeAppProps> = ({ onCtaclick }) => {
   const loadingMessages = [
     "Revisando tus estantes virtuales...",
     "Clasificando tus bases de proteínas e hidratos...",
-    "Consultando el motor de inteligencia artificial...",
+    "Consultando el asistente de inteligencia artificial...",
     "Reduciendo tus decisiones diarias a cero...",
     "¡Preparando tus sugerencias express listas para servir!"
   ];
@@ -396,7 +396,7 @@ export const FridgeApp: React.FC<FridgeAppProps> = ({ onCtaclick }) => {
           setActiveRecipeId(recipesList[0].id);
         }
       } else {
-        throw new Error(data.error || "Fallo en la comunicación con el motor de IA.");
+        throw new Error(data.error || "Fallo en la comunicación con el asistente de IA.");
       }
     } catch (err: any) {
       console.error(err);
@@ -608,7 +608,7 @@ export const FridgeApp: React.FC<FridgeAppProps> = ({ onCtaclick }) => {
               <span>{loading ? "Analizando heladera..." : "Crear menú con lo que tengo"}</span>
             </button>
             <p className="text-[10px] text-stone-400 text-center mt-2.5">
-              Genera sugerencias en segundos aplicando el motor inteligente de cocina sin desperdicios.
+              Genera sugerencias en segundos aplicando cocina sin desperdicios.
             </p>
           </div>
 
@@ -629,7 +629,7 @@ export const FridgeApp: React.FC<FridgeAppProps> = ({ onCtaclick }) => {
                 <span className={`text-[10px] px-2 py-0.5 rounded-full ${
                   sourceType === "ai" ? "bg-amber-400/20 text-amber-300 border border-amber-400/30" : "bg-emerald-950 text-[#a5cca8] border border-emerald-900"
                 }`}>
-                  {sourceType === "ai" ? "Conexión Inteligente IA" : "Motor Base Optimizado"}
+                  {sourceType === "ai" ? "Conexión Inteligente IA" : "Recetas Base Recomendadas"}
                 </span>
               )}
             </h3>
@@ -657,7 +657,7 @@ export const FridgeApp: React.FC<FridgeAppProps> = ({ onCtaclick }) => {
                 <div className="space-y-1">
                   <h4 className="text-base font-serif font-medium text-stone-200">Decisión cero lista para vos</h4>
                   <p className="text-xs text-stone-500 leading-relaxed">
-                    Presioná el botón <strong className="text-stone-300">"Crear menú con lo que tengo"</strong> a la izquierda para simular el funcionamiento estrella del software. El motor interpretará tus sobras reales.
+                    Presioná el botón <strong className="text-stone-300">"Crear menú con lo que tengo"</strong> a la izquierda para probar la app. La app interpretará tus sobras reales.
                   </p>
                 </div>
 

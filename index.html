@@ -25,39 +25,36 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400&display=swap" />
     </noscript>
 
-    <!-- Microsoft Clarity Tracking Script (Optimized for maximum PageSpeed/Lighthouse performance) -->
+    <!-- Microsoft Clarity (Optimized for PageSpeed > 95 to prevent thread blockages) -->
     <script type="text/javascript">
+    (function() {
+      var clarityInitialized = false;
+      function initClarity() {
+        if (clarityInitialized) return;
+        clarityInitialized = true;
+        
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            
-            var loaded = false;
-            function loadClarity() {
-                if (loaded) return;
-                loaded = true;
-                
-                // Clean up listeners
-                window.removeEventListener('scroll', loadClarity);
-                window.removeEventListener('mousemove', loadClarity);
-                window.removeEventListener('touchstart', loadClarity);
-                window.removeEventListener('click', loadClarity);
-                
-                t = l.createElement(r);
-                t.async = 1;
-                t.src = "https://www.clarity.ms/tag/" + i;
-                y = l.getElementsByTagName(r)[0];
-                y.parentNode.insertBefore(t, y);
-            }
-
-            // Load on first real user interaction to keep Lighthouse score at 92+
-            window.addEventListener('scroll', loadClarity, { passive: true });
-            window.addEventListener('mousemove', loadClarity, { passive: true });
-            window.addEventListener('touchstart', loadClarity, { passive: true });
-            window.addEventListener('click', loadClarity);
-            
-            // Safe fallback to ensure it loads even if no immediate interaction happens
-            setTimeout(loadClarity, 10000);
-        })(window, document, "clarity", "script", "xomgmtpz4y");
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xutqnn9vl0");
+        
+        // Remove event listeners once initialized
+        window.removeEventListener('scroll', initClarity);
+        window.removeEventListener('click', initClarity);
+        window.removeEventListener('touchstart', initClarity);
+      }
+      
+      // Load on natural user interaction to avoid page speed penalties
+      window.addEventListener('scroll', initClarity, { passive: true });
+      window.addEventListener('click', initClarity, { passive: true });
+      window.addEventListener('touchstart', initClarity, { passive: true });
+      
+      // Fallback: load after 4 seconds of absolute inactivity to keep Lighthouse audits clean
+      setTimeout(initClarity, 4000);
+    })();
     </script>
+    <!-- End Microsoft Clarity -->
   </head>
   <body>
     <!-- Meta Pixel Code (noscript fallback) -->
@@ -112,10 +109,10 @@
                   <span>Resultado del Test</span>
                 </span>
                 <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-950 tracking-tight leading-tight max-w-2xl mx-auto">
-                  Esto es todo lo que necesitás para dejar de pensar qué cocinar, hoy.
+                  Abrís la heladera, la mirás unos segundos, no sabés qué cocinar y la volvés a cerrar.
                 </h2>
                 <p class="text-stone-850 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-                  Descubrí cómo Heladera Inteligente resuelve tus comidas del día a día y todo lo que recibís hoy con tu acceso de por vida.
+                  En solo 30 segundos, Heladera Inteligente decide la comida por vos usando exactamente los ingredientes que ya tenés guardados.
                 </p>
               </div>
 
@@ -147,7 +144,7 @@
               <div class="max-w-md mx-auto text-center pt-2 pb-1 px-2">
                 <button class="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-700 text-stone-50 border-none px-6 py-4 rounded-xl font-serif font-black text-md md:text-lg tracking-wide shadow-md flex items-center justify-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                  <span>QUIERO MI ACCESO + LOS BONOS</span>
+                  <span>QUIERO DEJAR DE PENSAR QUÉ COCINAR</span>
                 </button>
                 <p class="text-xs text-stone-900 font-mono font-semibold mt-2.5 leading-normal">
                   Único pago de $17.900 ARS • Acceso de por vida

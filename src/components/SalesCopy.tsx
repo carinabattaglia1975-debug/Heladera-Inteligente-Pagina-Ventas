@@ -187,10 +187,10 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         <span>Resultado del Test</span>
       </span>
       <h2 className="text-xl sm:text-3xl font-serif font-black text-stone-950 tracking-tight leading-tight max-w-2xl mx-auto">
-        Esto es todo lo que necesitás para dejar de pensar qué cocinar, hoy.
+        Abrís la heladera, la mirás unos segundos, no sabés qué cocinar y la volvés a cerrar.
       </h2>
       <p className="text-stone-850 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-        Descubrí cómo Heladera Inteligente resuelve tus comidas del día a día y todo lo que recibís hoy con tu acceso de por vida.
+        En solo 30 segundos, Heladera Inteligente decide la comida por vos usando exactamente los ingredientes que ya tenés guardados.
       </p>
     </div>
   ), []);
@@ -254,10 +254,10 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
     <div className="max-w-md mx-auto text-center pt-2 pb-1 px-2">
       <button
         onClick={handleScrollToOffer}
-        className="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-700 text-stone-50 border-none px-6 py-4 rounded-xl font-serif font-black text-md md:text-lg tracking-wide shadow-md active:scale-[0.99] transition-all flex items-center justify-center gap-2"
+        className="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-700 text-stone-50 border-none px-6 py-4 rounded-xl font-serif font-black text-md md:text-lg tracking-wide shadow-md active:scale-[0.99] transition-all flex items-center justify-center gap-2 uppercase"
       >
         <ShoppingBag className="w-5 h-5 text-white shrink-0" />
-        <span>QUIERO MI ACCESO + LOS BONOS</span>
+        <span>QUIERO DEJAR DE PENSAR QUÉ COCINAR</span>
       </button>
       <p className="text-xs text-stone-900 font-mono font-semibold mt-2.5 leading-normal">
         Único pago de $17.900 ARS • Acceso de por vida
