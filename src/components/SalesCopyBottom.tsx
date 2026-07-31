@@ -429,7 +429,7 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
         {/* Tarjeta de checkout */}
         <div className="bg-stone-900/90 border border-emerald-500/20 p-6 md:p-8 rounded-3xl max-w-sm mx-auto space-y-6 shadow-2xl relative">
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[9px] font-extrabold px-3 py-1 rounded-full tracking-wider uppercase whitespace-nowrap">
-            ¡OFERTA VITALICIA + 2 BONOS GRATIS!
+            ¡OFERTA VITALICIA + 3 BONOS GRATIS!
           </div>
 
           <div className="space-y-4">
