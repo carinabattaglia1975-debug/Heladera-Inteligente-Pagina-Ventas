@@ -419,31 +419,35 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
         
         <div className="space-y-2">
           <span className="text-[10px] font-black tracking-widest text-[#d1fae5] uppercase bg-[#1e442f] px-3.5 py-1 rounded-full border border-emerald-800">
-            UN SOLO PAGO • ACCESO VITALICIO
+            UN SOLO PAGO • ACCESO DE POR VIDA
           </span>
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white tracking-tight">
             Accedé hoy a Heladera Inteligente y dejá de preguntarte qué cocinar cada día.
           </h2>
+          <p className="text-emerald-300 text-sm font-semibold pt-1">
+            🎁 Además, hoy recibís 3 bonos exclusivos sin costo adicional.
+          </p>
         </div>
 
         {/* Tarjeta de checkout */}
         <div className="bg-stone-900/90 border border-emerald-500/20 p-6 md:p-8 rounded-3xl max-w-sm mx-auto space-y-6 shadow-2xl relative">
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[9px] font-extrabold px-3 py-1 rounded-full tracking-wider uppercase whitespace-nowrap">
-            ¡OFERTA VITALICIA + 3 BONOS GRATIS!
+            Acceso completo por un único pago
           </div>
 
           <div className="space-y-4">
             <div className="py-2 text-center">
-              <span className="text-[11px] text-emerald-300 uppercase tracking-widest font-black block mb-1">ÚNICO PAGO PROMOCIONAL:</span>
               <h3 className="text-5xl md:text-6xl font-serif font-black text-emerald-400 tracking-tight leading-none drop-shadow-[0_4px_12px_rgba(52,211,153,0.18)]">
                 $17.900 ARS
               </h3>
-              <span className="text-[11px] text-emerald-400 font-extrabold tracking-wider block mt-1">PAGO ÚNICO • SIN MENSUALIDADES NI RECURRENCIAS</span>
+              <span className="text-[11px] text-emerald-400 font-extrabold tracking-wider block mt-2">
+                Tu acceso es para siempre. Sin suscripciones.
+              </span>
             </div>
             
             <div className="bg-emerald-950/40 border border-emerald-500/20 rounded-2xl p-3.5 text-left space-y-2">
               <p className="text-stone-200 text-xs leading-relaxed font-semibold">
-                💡 Cuando dejás de improvisar las comidas, también dejás de improvisar las compras. Organizarte con lo que ya tenés en casa puede ayudarte a ahorrar tiempo, reducir el desperdicio y recuperar rápidamente la inversión en la aplicación.
+                💡 Cuando organizás tus comidas también organizás tus compras.
               </p>
             </div>
           </div>
@@ -457,15 +461,31 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
             <span>QUIERO DEJAR DE PENSAR QUÉ COCINAR</span>
           </button>
 
-          {/* GARANTÍA - Moverla INMEDIATAMENTE debajo del botón de compra */}
-          <div className="bg-stone-950/80 border border-emerald-500/30 p-4 rounded-2xl text-left space-y-1.5 mt-3">
-            <p className="text-emerald-400 font-bold text-xs flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Garantía de 7 días sin riesgo</span>
-            </p>
+          {/* GARANTÍA */}
+          <div className="bg-stone-950/80 border border-emerald-500/30 p-4 rounded-2xl text-left space-y-3 mt-3">
+            <div className="flex items-center gap-3">
+              {/* Sello circular minimalista */}
+              <div className="w-12 h-12 rounded-full border border-emerald-500/40 bg-emerald-900/30 flex flex-col items-center justify-center text-center leading-none text-emerald-300 shrink-0 select-none">
+                <span className="text-[10px] font-black font-serif tracking-tight text-white">7 DÍAS</span>
+                <span className="text-[6.5px] font-extrabold tracking-wider text-emerald-400 uppercase my-[1px]">GARANTÍA</span>
+                <span className="text-[8px] font-bold text-emerald-300">100%</span>
+              </div>
+              <div>
+                <h4 className="text-emerald-400 font-bold text-xs font-serif">
+                  Garantía de satisfacción 7 días
+                </h4>
+              </div>
+            </div>
+
             <p className="text-stone-200 text-xs leading-relaxed">
-              Probala 7 días sin riesgo. Si abrís la app, la usás, y sigue siendo un problema saber qué cocinar, te devolvemos el dinero completo. Sin formularios. Sin preguntas.
+              Probala con total tranquilidad. Si durante los primeros 7 días sentís que Heladera Inteligente no es para vos, te devolvemos el 100% del dinero. Sin trámites. Sin preguntas.
             </p>
+
+            <div className="flex items-center justify-between text-[10px] text-emerald-300/90 font-medium pt-2 border-t border-emerald-500/20">
+              <span>✓ Devolución 100%</span>
+              <span>✓ Pago Seguro</span>
+              <span>✓ Mercado Pago</span>
+            </div>
           </div>
 
           {/* Sellos de Seguridad */}
