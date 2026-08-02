@@ -190,7 +190,7 @@ const SalesCopyComponent: React.FC<SalesCopyProps> = ({ onCtaclick, onOpenChecko
         Abrís la heladera, la mirás unos segundos, no sabés qué cocinar y la volvés a cerrar.
       </h2>
       <p className="text-stone-850 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-        En solo 30 segundos, Heladera Inteligente decide la comida por vos usando exactamente los ingredientes que ya tenés guardados.
+        En solo 30 segundos, Heladera Inteligente decide la comida por vos usando exactamente los ingredientes que ya tenés guardados. Un sistema creado por Laura Martínez, Nutricionista y Chef.
       </p>
     </div>
   ), []);

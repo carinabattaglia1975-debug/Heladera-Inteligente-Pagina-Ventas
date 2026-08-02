@@ -586,10 +586,16 @@ export const SalesCopyBottom: React.FC<SalesCopyBottomProps> = ({
 
   const footerSection = useMemo(() => (
     <footer className="bg-stone-950 text-stone-300 py-10 px-4 border-t border-stone-900 text-xs text-center">
-      <div className="max-w-4xl mx-auto space-y-3">
+      <div className="max-w-4xl mx-auto space-y-4 flex flex-col items-center">
         <p className="font-serif text-stone-200">Heladera Inteligente™ - Todos los derechos reservados © {new Date().getFullYear()}</p>
+        <img 
+          src="https://i.postimg.cc/J7N4sdTy/Chat-GPT-Image-29-jul-2026-14-00-30-(1).webp" 
+          alt="Heladera Inteligente" 
+          referrerPolicy="no-referrer"
+          className="max-w-[200px] sm:max-w-[240px] h-auto mx-auto object-contain py-1"
+        />
         <p className="max-w-2xl mx-auto text-stone-300 text-[10.5px] leading-relaxed">
-          Este sitio web no forma parte de Facebook, Instagram ni Meta Platforms, Inc. Todos los nombres de productos y marcas son propiedad de sus respectivos owners. Aureva Studio SAS. Soporte directo: aurevastudio2@gmail.com
+          Este sitio web no forma parte de Facebook, Instagram ni Meta Platforms, Inc. Todos los nombres de productos y marcas son propiedad de sus respectivos owners. Aureva Studio Sistemas de Alimentacion SAS. Soporte directo: aurevastudio2@gmail.com
         </p>
       </div>
     </footer>
